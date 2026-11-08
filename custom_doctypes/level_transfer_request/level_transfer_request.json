@@ -1,0 +1,228 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-11-08 18:59:09.412354",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sec_student",
+  "student",
+  "student_name",
+  "current_program",
+  "current_student_group",
+  "col_break_1",
+  "new_program",
+  "new_student_group",
+  "proposed_by",
+  "transfer_reason",
+  "sec_fee",
+  "total_sessions",
+  "remaining_sessions",
+  "current_fee",
+  "col_break_2",
+  "new_fee",
+  "additional_fee",
+  "sec_status",
+  "status",
+  "rejection_reason",
+  "col_break_3",
+  "fees_doc",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "sec_student",
+   "fieldtype": "Section Break",
+   "label": "Th\u00f4ng tin H\u1ecdc vi\u00ean & L\u1edbp h\u1ecdc"
+  },
+  {
+   "fieldname": "student",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "H\u1ecdc vi\u00ean",
+   "options": "Student",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "student.student_name",
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "label": "H\u1ecd v\u00e0 t\u00ean",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_program",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "C\u1ea5p \u0111\u1ed9 hi\u1ec7n t\u1ea1i",
+   "options": "Program",
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_student_group",
+   "fieldtype": "Link",
+   "label": "L\u1edbp hi\u1ec7n t\u1ea1i",
+   "options": "Student Group"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "new_program",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "C\u1ea5p \u0111\u1ed9 m\u1edbi \u0111\u1ec1 xu\u1ea5t",
+   "options": "Program",
+   "reqd": 1
+  },
+  {
+   "fieldname": "new_student_group",
+   "fieldtype": "Link",
+   "label": "L\u1edbp m\u1edbi d\u1ef1 ki\u1ebfn",
+   "options": "Student Group"
+  },
+  {
+   "fieldname": "proposed_by",
+   "fieldtype": "Link",
+   "label": "Gi\u00e1o vi\u00ean \u0111\u1ec1 xu\u1ea5t",
+   "options": "Instructor"
+  },
+  {
+   "fieldname": "transfer_reason",
+   "fieldtype": "Select",
+   "label": "L\u00fd do chuy\u1ec3n c\u1ea5p",
+   "options": "V\u01b0\u1ee3t c\u1ea5p qua b\u00e0i ki\u1ec3m tra tu\u1ea7n/th\u00e1ng (BR-TR-01a)\nGi\u00e1o vi\u00ean ch\u1ee7 \u0111\u1ed9ng \u0111\u1ec1 xu\u1ea5t gi\u1eefa k\u1ef3 (BR-TR-01b)\nKh\u00e1c"
+  },
+  {
+   "fieldname": "sec_fee",
+   "fieldtype": "Section Break",
+   "label": "T\u00ednh to\u00e1n Ph\u1ee5 thu "
+  },
+  {
+   "default": "24",
+   "fieldname": "total_sessions",
+   "fieldtype": "Int",
+   "label": "T\u1ed5ng s\u1ed1 bu\u1ed5i kh\u00f3a h\u1ecdc",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remaining_sessions",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "S\u1ed1 bu\u1ed5i c\u00f2n l\u1ea1i",
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_fee",
+   "fieldtype": "Currency",
+   "label": "H\u1ecdc ph\u00ed c\u1ea5p c\u0169",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "new_fee",
+   "fieldtype": "Currency",
+   "label": "H\u1ecdc ph\u00ed c\u1ea5p m\u1edbi",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "additional_fee",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "S\u1ed1 ti\u1ec1n ph\u1ee5 thu",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_status",
+   "fieldtype": "Section Break",
+   "label": "Tr\u1ea1ng th\u00e1i & Quy\u1ebft \u0111\u1ecbnh"
+  },
+  {
+   "default": "Ch\u1edd duy\u1ec7t",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tr\u1ea1ng th\u00e1i",
+   "options": "Ch\u1edd duy\u1ec7t\nH\u1ecdc vi\u00ean \u0111\u1ed3ng \u00fd\nH\u1ecdc vi\u00ean t\u1eeb ch\u1ed1i\n\u0110\u00e3 thanh to\u00e1n ph\u1ee5 thu\nHo\u00e0n t\u1ea5t chuy\u1ec3n l\u1edbp"
+  },
+  {
+   "depends_on": "eval:doc.status=='H\u1ecdc vi\u00ean t\u1eeb ch\u1ed1i'",
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "L\u00fd do t\u1eeb ch\u1ed1i (n\u1ebfu c\u00f3)"
+  },
+  {
+   "fieldname": "col_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fees_doc",
+   "fieldtype": "Link",
+   "label": "Phi\u1ebfu thu ph\u1ee5 thu",
+   "options": "Fees",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Level Transfer Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-08 19:10:15.943343",
+ "modified_by": "Administrator",
+ "module": "Education",
+ "name": "Level Transfer Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Education Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Instructor",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

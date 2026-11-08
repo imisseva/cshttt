@@ -37,6 +37,13 @@ docker exec devcontainer-example-frappe-1 python3 installer.py -j apps.json -t v
 docker exec -d -w /workspace/development/frappe-bench devcontainer-example-frappe-1 /home/frappe/.local/bin/bench start
 ```
 
+### 5. Đồng bộ Custom DocTypes (Level Transfer Request,...)
+Sau khi `git pull` code mới về hoặc sau khi cài đặt site xong, chỉ cần chạy script này để nạp toàn bộ Custom DocType vào database:
+
+```powershell
+.\sync_custom.ps1
+```
+
 ---
 
 ## 🌐 Truy cập hệ thống
