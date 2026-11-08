@@ -1,0 +1,28 @@
+# Frappe Bench dynamic environments & large repositories
+frappe_docker/development/frappe-bench/env/
+frappe_docker/development/frappe-bench/node_modules/
+frappe_docker/development/frappe-bench/logs/
+frappe_docker/development/frappe-bench/apps/
+frappe_docker/development/frappe-bench/sites/*/locks/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
