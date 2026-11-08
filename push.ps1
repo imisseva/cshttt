@@ -1,4 +1,4 @@
-﻿param(
+param(
     [string]$message = "update customizations and doctypes"
 )
 

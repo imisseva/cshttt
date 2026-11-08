@@ -37,44 +37,49 @@ docker exec devcontainer-example-frappe-1 python3 installer.py -j apps.json -t v
 docker exec -d -w /workspace/development/frappe-bench devcontainer-example-frappe-1 /home/frappe/.local/bin/bench start
 ```
 
-### 5. Nạp các Custom DocType & Tùy biến
+### 5. Nạp toàn bộ dữ liệu & DocType mới nhất
 ```powershell
-.\pull.ps1
+.\import_data.ps1
 ```
 
 * Truy cập web tại: **[http://localhost:8000/app](http://localhost:8000/app)** (Tài khoản: `Administrator` / `admin`).
 
 ---
 
-## 🔄 QUY TRÌNH LÀM VIỆC NHÓM (HÀNG NGÀY)
+## 🔄 BỘ LỆNH ĐỒNG BỘ LÀM VIỆC NHÓM HÀNG NGÀY
 
-Quy trình cực kỳ đơn giản với 2 lệnh tự động:
+### 1. Đồng bộ Cấu trúc (DocType mới, Sửa Form, Custom Fields)
+* **Người gửi:**
+  ```powershell
+  .\push.ps1 "Mô tả việc bạn vừa làm"
+  ```
+* **Người nhận:**
+  ```powershell
+  .\pull.ps1
+  ```
 
-### 📤 1. Khi bạn làm xong và muốn gửi lên cho bạn bè:
-Sau khi bạn thêm DocType, cấu hình trường, bấm Save / Export Customizations xong trên web, mở PowerShell gõ:
-```powershell
-.\push.ps1 "Mô tả những gì bạn vừa làm"
-```
-*(Script sẽ tự động gom toàn bộ cấu hình mới và đẩy thẳng lên GitHub).*
-
-### 📥 2. Khi bạn của bạn muốn nhận cập nhật mới về máy:
-Bạn của bạn mở PowerShell tại thư mục dự án và chỉ cần gõ đúng 1 lệnh:
-```powershell
-.\pull.ps1
-```
-*(Script sẽ tự động kéo code từ GitHub về, nạp vào Docker và cập nhật Database trong vài giây).*
+### 2. Đồng bộ DỮ LIỆU (Học sinh, Điểm thi, Lịch học, Học phí)
+* **Người vừa nhập xong dữ liệu:**
+  ```powershell
+  .\export_data.ps1 "Mo ta du lieu vua nhap"
+  ```
+  *(Tự động sao lưu database ~1MB và đẩy lên GitHub).*
+* **Người nhận muốn nạp toàn bộ dữ liệu về máy mình:**
+  ```powershell
+  .\import_data.ps1
+  ```
+  *(Tự động kéo về và phục hồi 100% dữ liệu vào MariaDB).*
 
 ---
 
 ## 🛠️ Quản lý hệ thống cơ bản
 
-* **Dừng Docker khi nghỉ làm:**
+* **Khi muốn nghỉ:**
   ```powershell
-  docker-compose -f frappe_docker/devcontainer-example/docker-compose.yml stop
+  .\stop.ps1
   ```
 
-* **Bật lại Docker khi tiếp tục làm:**
+* **Khi muốn làm tiếp:**
   ```powershell
-  docker-compose -f frappe_docker/devcontainer-example/docker-compose.yml start
-  docker exec -d -w /workspace/development/frappe-bench devcontainer-example-frappe-1 /home/frappe/.local/bin/bench start
+  .\start.ps1
   ```

@@ -1,4 +1,4 @@
-﻿Write-Host "📥 1. Dang keo cap nhat moi nhat tu GitHub..." -ForegroundColor Cyan
+Write-Host "📥 1. Dang keo cap nhat moi nhat tu GitHub..." -ForegroundColor Cyan
 git pull origin main
 
 Write-Host "🔄 2. Dang dong bo cac DocType vao Docker va cap nhat Database..." -ForegroundColor Cyan
