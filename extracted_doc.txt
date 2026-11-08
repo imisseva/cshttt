@@ -1,0 +1,1082 @@
+﻿Ling IELTS — Tài liệu phân tích nghiệp vụ A1 (bản hoàn thiện)
+Oct 9, 2026 · @phong
+Bản hoàn thiện của tài liệu A1 gồm 7 luồng nghiệp vụ của trung tâm Ling IELTS, đã sửa 20 lỗi đã rà soát và vẽ lại sơ đồ; chỗ nào cần quản lý xác nhận được đánh dấu [CẦN CHỐT].
+1. Tổng quan tổ chức
+Ling IELTS là trung tâm luyện thi IELTS 4 kỹ năng quy mô nhỏ (hơn 100 học viên, 6 giáo viên), đang quản lý bằng Excel, Zalo và sổ tay; đây là đối tượng nghiên cứu (case study) của đề tài Education ERP.
+1.1. Thông tin chung
+Tiêu chí
+Thông tin
+Tên trung tâm
+Ling IELTS
+Quy mô học viên
+Hơn 100 học viên đang theo học
+Đội ngũ giáo viên
+6 giáo viên, gồm giáo viên Việt Nam và giáo viên nước ngoài
+Chương trình đào tạo
+IELTS 4 kỹ năng, chia lớp theo cấp độ điểm số (band score)
+Cơ sở vật chất
+Hơn 10 phòng: phòng giảng dạy, phòng Speaking, phòng Listening, phòng tiếp tân, khu hoạt động giải trí
+Thời lượng khóa học
+3 tháng/khóa, 2 buổi/tuần, mỗi buổi 2 tiếng
+Công cụ quản lý hiện tại
+Excel (điểm số, điểm danh) kết hợp Zalo (liên lạc) và sổ tay (ghi chép tại lớp)
+1.2. Vai trò trong tổ chức
+Trung tâm không có vị trí lễ tân riêng; Quản lý trực tiếp làm mọi việc tiếp đón, đăng ký, xếp lớp và thu học phí.
+Vai trò
+Trách nhiệm chính
+Quản lý trung tâm
+Xếp lịch giảng dạy, thu học phí, tiếp đón và tư vấn tuyển sinh, tổ chức test đầu vào, xếp lớp, phân bổ phòng học, phê duyệt đề xuất chuyển cấp độ và yêu cầu nghỉ dạy, điều hành chung
+Giáo viên (6 người)
+Giảng dạy theo lớp/cấp độ được phân công, chấm bài test và bài kiểm tra tuần/tháng, điểm danh, duyệt yêu cầu xin nghỉ của học viên trong lớp mình phụ trách, chủ động đề xuất chuyển cấp giữa kỳ khi học viên vượt trội
+Học viên
+Đăng ký khóa học, làm test, tham gia học, đóng học phí, gửi yêu cầu xin nghỉ, xác nhận hoặc từ chối đề xuất chuyển cấp, xem kết quả học tập
+Phụ huynh
+Giao tiếp với trung tâm, đóng học phí; xem kết quả học tập của con [CẦN CHỐT: phụ huynh có tài khoản trên hệ thống không]
+2. Mục tiêu và phạm vi dự án
+Dự án số hóa 7 luồng nghiệp vụ cốt lõi của Ling IELTS, với 9 KPI đo được; phạm vi chia theo MoSCoW.
+2.1. Mục tiêu tổng thể
+Số hóa toàn bộ quy trình vận hành cốt lõi của trung tâm, thay phương thức quản lý thủ công hiện tại (Excel, Zalo, sổ tay) bằng một hệ thống Education ERP tập trung, giảm sai sót, tăng tốc độ xử lý và tạo nền tảng dữ liệu chuẩn hóa cho giai đoạn sau. Tài liệu này chỉ phân tích nghiệp vụ và hệ thống, chưa chọn nền tảng công nghệ.
+2.2. Chỉ số đo lường thành công (KPI)
+Mỗi KPI có baseline (hiện trạng), mục tiêu định lượng và cách đo. Các baseline ghi "ước tính" là số của nhóm [CẦN CHỐT: ghi nguồn số liệu (quản lý cung cấp hay nhóm quan sát) và đo thử lại theo cột Cách đo].
+Mã
+KPI
+Baseline (hiện trạng)
+Mục tiêu
+Cách đo
+K1
+Thời gian xếp lịch giảng dạy đầu mỗi khóa (3 tháng)
+~8 giờ/khóa (ước tính)
+≤ 2 giờ/khóa
+Quản lý bấm giờ thao tác xếp lịch ở 2 khóa liên tiếp
+K2
+Số trường hợp trùng giờ giáo viên
+~2–3 trường hợp/khóa (ước tính)
+0 trường hợp/khóa
+Số cảnh báo xung đột lịch ghi nhận trên hệ thống (BR-SCH-01)
+K3
+Sai sót khi áp dụng giảm giá / tính học phí phải thu
+~5% hồ sơ có sai lệch (ước tính)
+0% (hệ thống tự tính theo bảng giá)
+Đối soát phiếu thu với học phí theo bảng giá cuối khóa
+K4
+Thời gian xác nhận một học viên đã đóng đủ học phí
+~5–10 phút/học viên (tra Excel + sổ tay, ước tính)
+< 1 phút (xem trạng thái trên hồ sơ)
+Bấm giờ mẫu 10 học viên trước và sau triển khai
+K5
+Tỷ lệ buổi điểm danh và bài kiểm tra được nhập trực tiếp trên hệ thống
+2 nơi lưu (Excel + sổ tay); ~0% trên hệ thống
+100% buổi học và 100% bài kiểm tra
+Số buổi có bản ghi điểm danh / tổng số buổi trong lịch
+K6
+Số trường hợp phòng học xếp sai loại hoặc trùng lịch
+~1–2 trường hợp/khóa (ước tính)
+0 trường hợp/khóa
+Số cảnh báo xung đột phòng ghi nhận trên hệ thống (BR-ROOM-01)
+K7
+Tỷ lệ lần chuyển cấp có phụ thu tính tự động đúng công thức
+0% (tính tay)
+100%, 0 sai lệch
+Đối soát phụ thu của hệ thống với công thức BR-TR-02
+K8
+Tỷ lệ đề xuất chuyển cấp được lưu lại (kể cả bị từ chối)
+0% (không lưu lịch sử)
+100%
+Số bản ghi chuyển cấp / số đề xuất thực tế
+K9
+Thời gian từ khi giáo viên báo nghỉ đến khi chốt lịch mới
+~1 ngày (trao đổi qua Zalo, ước tính)
+≤ 2 giờ làm việc
+Chênh lệch thời điểm tạo và xác nhận yêu cầu nghỉ dạy
+2.3. Phạm vi dự án (phương pháp MoSCoW)
+Cổng thông tin cơ bản cho học viên (xin nghỉ, xem kết quả, xác nhận chuyển cấp) và cảnh báo trùng lịch đều là Must, vì các User Story Must phụ thuộc vào chúng.
+Mức độ ưu tiên
+Nội dung
+Must have
+Quản lý hồ sơ học viên (kèm kết quả test đầu vào); xếp lịch giảng dạy theo khóa 3 tháng; phân bổ phòng học theo loại; thu học phí đầu khóa có hỗ trợ giảm giá; điểm danh và ghi nhận điểm số; ghi nhận đánh giá hàng tuần và cuối tháng; tính tự động phụ thu khi chuyển cấp độ; xử lý giáo viên xin nghỉ dạy (lùi lịch, đổi giáo viên, dạy bù); số hóa quy trình học viên xin nghỉ và liên kết với điểm danh; cổng thông tin cơ bản cho học viên; cảnh báo và chặn trùng lịch giáo viên và phòng học
+Should have
+Gợi ý lớp mới còn chỗ trống khi chuyển cấp độ; tài khoản cho phụ huynh để xem kết quả học tập [CẦN CHỐT]; quản lý xem danh sách yêu cầu xin nghỉ của học viên
+Could have
+Đồng bộ thông báo tự động qua Zalo
+Won't have (đợt này)
+Thanh toán học phí online; quản lý lương giáo viên (payroll); ứng dụng di động riêng; cổng thông tin tự phục vụ đầy đủ
+Thông báo tối thiểu cho bản Must (thông báo lịch dạy, kết quả duyệt xin nghỉ, nhắc thanh toán) hiển thị ngay trong hệ thống [CẦN CHỐT: có cần thêm email]; Zalo chỉ là Could have.
+3. Khảo sát hiện trạng (AS-IS) — tổng quan
+Thông tin hiện trạng do nhóm thực hiện quan sát trực tiếp (có thành viên là cựu học viên của trung tâm), sau đó được xác nhận với Quản lý và Giáo viên của trung tâm qua các vòng trao đổi. Chi tiết từng luồng ở Mục 4.
+3.1. Sơ đồ AS-IS tổng quan
+3.2. Nguồn khảo sát và log xác nhận
+Bảng dưới đây ghi ai xác nhận nhóm quy tắc nào; ngày và hình thức trao đổi cần điền thêm vì chưa có trong tài liệu gốc.
+Nguồn
+Vai trò
+Xác nhận nhóm quy tắc
+Ngày / hình thức
+Người thực hiện đồ án
+Cựu học viên, quan sát thực tế
+Toàn bộ bức tranh AS-IS ban đầu
+[CẦN CHỐT]
+Quản lý trung tâm
+Xác nhận
+Học phí (BR-FEE), xếp lịch và phòng (BR-SCH, BR-ROOM), chuyển cấp (BR-TR-03, 04), cách tính band tổng (BR-STU-03)
+[CẦN CHỐT]
+Giáo viên
+Xác nhận
+Điều kiện chuyển cấp (BR-TR-01), nghỉ dạy (BR-TCH), trạng thái điểm danh (BR-ATT-02)
+[CẦN CHỐT]
+Quy tắc còn lại
+Chưa rõ người xác nhận
+BR-STU-01, 02, 04, BR-TR-02, BR-ATT-01, 03, 04, BR-LEAVE
+[CẦN CHỐT: quản lý hoặc giáo viên xác nhận lại]
+4. Phân tích nghiệp vụ và mô hình hóa (AS-IS, pain point, TO-BE)
+Mỗi luồng gồm: sơ đồ AS-IS, pain point, sơ đồ TO-BE, bảng phân tích khoảng cách, bảng Input/Process/Output (IPO) và các nhánh rẽ. Quy ước sơ đồ: ô viền đỏ = bước thủ công phát sinh pain point, hình thoi = câu hỏi rẽ nhánh.
+4.1. Luồng 1 — Quản lý thông tin học viên
+Sơ đồ AS-IS
+Pain Point
+Kết quả test đầu vào bằng giấy khó lưu trữ có hệ thống, dễ thất lạc.
+Không có hồ sơ tập trung để tra cứu lịch sử học và kết quả qua các khóa.
+Không theo dõi được lịch sử thay đổi cấp độ của học viên theo thời gian.
+Sơ đồ TO-BE
+Phân tích khoảng cách
+Khía cạnh
+Nội dung
+AS-IS
+Test đầu vào bằng giấy (4 kỹ năng); Quản lý xếp lớp dựa trên kinh nghiệm; thông tin học viên ghi rải rác giữa Excel và sổ tay
+Pain Point
+Dễ thất lạc kết quả; không có hồ sơ tập trung; không theo dõi lịch sử cấp độ
+TO-BE
+Giáo viên nhập điểm 4 kỹ năng ngay vào hồ sơ; hệ thống tính band tổng và xác định cấp độ; hồ sơ học viên tập trung, liên kết phụ huynh; lịch sử cấp độ lưu theo thời gian
+Input / Process / Output (IPO)
+Thành phần
+Nội dung
+Actor
+Quản lý trung tâm, Giáo viên, Học viên, Phụ huynh
+Input
+Thông tin cá nhân học viên và phụ huynh; điểm 4 kỹ năng của bài test đầu vào
+Process
+Quản lý tiếp nhận và tư vấn → học viên làm test 4 kỹ năng → Giáo viên chấm và nhập điểm → hệ thống tính band tổng (BR-STU-03) → tạo hồ sơ học viên kèm phụ huynh → thu học phí (Luồng 4) → Quản lý xếp lớp theo cấp độ
+Output
+Hồ sơ học viên được tạo; học viên được xếp vào lớp phù hợp cấp độ
+Data
+Học viên, Phụ huynh, Ghi danh, Cấp độ, Kết quả đánh giá
+Exception
+Chưa đủ điểm 4 kỹ năng thì chưa xác định cấp độ và chưa xếp lớp (BR-STU-03). Band tổng ngoài khoảng 3.0 đến 8.0 → xử lý theo BR-STU-05 [CẦN CHỐT]
+Alternative / Exception Flow
+Main Flow: tiếp nhận → test → chấm và nhập điểm → xác định cấp độ → tạo hồ sơ → thu học phí → xếp lớp.
+Exception Flow: band tổng ngoài phạm vi nhận học viên → không xếp lớp, xử lý theo BR-STU-05.
+4.2. Luồng 2 — Xếp lịch giảng dạy
+Sơ đồ AS-IS
+Pain Point
+Với 6 giáo viên và nhiều lớp theo cấp độ, xếp lịch thủ công trên Excel dễ trùng giờ dạy và phải phát hiện bằng mắt.
+Phối hợp giáo viên nước ngoài (lịch linh động) qua Zalo phức tạp hơn khi làm thủ công.
+Khi học viên chuyển cấp độ giữa khóa, tìm lớp mới còn chỗ trống và khớp lịch khó kiểm soát.
+Sơ đồ TO-BE
+Phân tích khoảng cách
+Khía cạnh
+Nội dung
+AS-IS
+Lịch quyết định đầu mỗi khóa (cố định 3 tháng), xếp trên Excel và trao đổi thời gian rảnh qua Zalo; giáo viên toàn thời gian dễ sắp xếp, giáo viên nước ngoài linh động nên khó phối hợp
+Pain Point
+Dễ trùng giờ dạy; khó tìm nhanh lớp và lịch phù hợp khi có học viên chuyển cấp
+TO-BE
+Lịch theo khóa lưu trên hệ thống; hệ thống cảnh báo và chặn xung đột giờ dạy; gợi ý đổi giáo viên khác cùng cấp độ, hoặc chuyển lớp sang học online và điều chỉnh lịch nếu không còn giáo viên rảnh
+Input / Process / Output (IPO)
+Thành phần
+Nội dung
+Actor
+Quản lý trung tâm; Giáo viên (nhận thông báo lịch, giáo viên nước ngoài cung cấp khung giờ linh động)
+Input
+Danh sách lớp theo cấp độ của khóa mới; danh sách giáo viên và khung giờ khả dụng
+Process
+Xác định lớp cần mở → phân công giáo viên phù hợp cấp độ → hệ thống kiểm tra trùng giờ → nếu trùng thì gợi ý đổi giáo viên hoặc chuyển online → xác nhận lịch → thông báo giáo viên và học viên
+Output
+Lịch giảng dạy chính thức cho khóa học
+Data
+Lớp, Lịch dạy (buổi học), Giáo viên
+Exception
+Trùng giờ dạy của giáo viên → hệ thống không cho lưu lịch (BR-SCH-01) và gợi ý phương án
+Alternative / Exception Flow
+Main Flow: xác định lớp → phân công giáo viên → không trùng giờ → xác nhận lịch → thông báo.
+Exception Flow 1: trùng giờ dạy của cùng một giáo viên → hệ thống cảnh báo và không cho lưu → Quản lý điều chỉnh khung giờ hoặc đổi giáo viên → kiểm tra lại.
+Exception Flow 2: giáo viên phụ trách không còn khung giờ rảnh → đổi sang giáo viên khác cùng cấp độ; nếu không có ai rảnh → chuyển lớp sang học online và điều chỉnh lịch (BR-SCH-02).
+4.3. Luồng 3 — Phân bổ phòng học
+Sơ đồ AS-IS
+Pain Point
+Nhiều loại phòng chuyên biệt (Speaking, Listening) làm tăng độ phức tạp khi xếp phòng.
+Quản lý tra sổ tay hoặc nhớ để tìm phòng trống, dễ nhầm loại phòng và phát hiện trùng phòng muộn, nhất là giờ cao điểm.
+Sơ đồ TO-BE
+Phân tích khoảng cách
+Khía cạnh
+Nội dung
+AS-IS
+Hơn 10 phòng với chức năng khác nhau (giảng dạy, Speaking, Listening, tiếp tân, giải trí); phòng đã xếp ghi vào sổ tay
+Pain Point
+Dễ nhầm loại phòng hoặc đặt trùng phòng chuyên dụng vào giờ cao điểm
+TO-BE
+Khai báo từng phòng kèm loại phòng và thiết bị, gắn vào lịch dạy theo đúng kỹ năng; hệ thống gợi ý phòng đúng loại còn trống và chặn đặt trùng
+Input / Process / Output (IPO)
+Thành phần
+Nội dung
+Actor
+Quản lý trung tâm (chịu trách nhiệm trực tiếp phân bổ phòng)
+Input
+Loại buổi học (giảng dạy, Speaking, Listening); danh sách phòng và tình trạng sử dụng
+Process
+Xác định loại phòng cần → hệ thống gợi ý phòng đúng loại còn trống → kiểm tra trùng lịch phòng → gán phòng vào buổi học
+Output
+Phòng học được gán cho từng buổi học
+Data
+Phòng học, Lịch dạy (buổi học)
+Exception
+Trùng lịch sử dụng phòng → hệ thống báo lỗi, không lưu (BR-ROOM-01) và chọn phòng khác
+Alternative / Exception Flow
+Main Flow: xác định loại buổi học → tìm phòng đúng loại còn trống → không trùng lịch → gán phòng.
+Exception Flow: phòng đã có lớp ở khung giờ đó → hệ thống báo lỗi → chọn phòng khác phù hợp và kiểm tra lại.
+Exception Flow: không còn phòng đúng loại → hệ thống thông báo và không gợi ý phòng sai loại.
+Buổi học chuyển sang online (Luồng 2 và 6): [CẦN CHỐT: có cần gán phòng hay ghi nền tảng học online].
+4.4. Luồng 4 — Theo dõi thu học phí
+Sơ đồ AS-IS
+Pain Point
+Áp dụng giảm giá học phí (nếu có) bằng tay dễ sai sót khi có hơn 100 học viên.
+Khó xác nhận nhanh học viên nào đã thanh toán đủ để đủ điều kiện tham gia khóa, vì phải đối chiếu sổ tay, phiếu thu và Excel.
+Sơ đồ TO-BE
+Phân tích khoảng cách
+Khía cạnh
+Nội dung
+AS-IS
+Học phí thu một lần, đủ trước khi tham gia khóa; tỷ lệ thuận với cấp độ IELTS; một số trường hợp được giảm giá; tung tâm không cho nợ học phí; quản lý tra bảng giá, tự tính giảm giá, viết phiếu thu và ghi sổ tay và Excel
+Pain Point
+Tính giảm giá thủ công dễ sai; khó xác nhận nhanh học viên đã đóng đủ
+TO-BE
+Học phí tự tính theo bảng giá và mức giảm; phiếu thu và thanh toán ghi nhận tức thời, gắn với hồ sơ học viên; chỉ xác nhận tham gia khóa sau khi thanh toán đủ 100%
+Input / Process / Output (IPO)
+Thành phần
+Nội dung
+Actor
+Quản lý trung tâm; Học viên hoặc Phụ huynh
+Input
+Cấp độ IELTS đăng ký; mức giảm giá (nếu có)
+Process
+Xác định học phí theo bảng giá (Mục 5.1) → áp dụng giảm giá nếu có → xuất phiếu thu → học viên thanh toán → hệ thống kiểm tra đã đủ 100% chưa → xác nhận tham gia khóa hoặc nhắc thanh toán
+Output
+Phiếu thu học phí; xác nhận đủ điều kiện tham gia khóa (hoặc nhắc thanh toán nếu chưa đủ)
+Data
+Bảng giá học phí, Phiếu thu và thanh toán, Ghi danh
+Exception
+Học viên chưa thanh toán đủ → chưa được xếp vào lớp, không có cơ chế cho nợ (BR-FEE-03)
+Alternative / Exception Flow
+Main Flow: xác định học phí → áp dụng ưu đãi (nếu có) → học viên thanh toán đủ 100% → ghi nhận thanh toán và xác nhận tham gia khóa.
+Exception Flow: chưa thanh toán đủ → hệ thống nhắc thanh toán; học viên chưa được xếp vào lớp cho đến khi đủ; trung tâm không cho nợ dưới bất kỳ hình thức nào.
+Exception Flow: mức giảm nhập vào lớn hơn học phí của cấp độ → hệ thống báo lỗi và không cho lưu.
+4.5. Luồng 5 — Kết quả học tập và đánh giá chuyển cấp độ
+Sơ đồ AS-IS
+Pain Point
+Không có lịch sử hệ thống hóa các lần đề xuất chuyển cấp độ, kể cả khi học viên từ chối.
+Tính phụ thu bằng tay dễ sai vì công thức phụ thuộc cả chênh lệch học phí lẫn thời gian còn lại.
+Điểm số ghi ở Excel và sổ tay, không đồng bộ, việc "vượt cấp độ" do Quản lý nhận định chủ quan.
+Sau khi học viên đồng ý chuyển lớp, Quản lý xếp lớp mới và cập nhật Excel thủ công, dễ quên.
+Sơ đồ TO-BE
+Phân tích khoảng cách
+Khía cạnh
+Nội dung
+AS-IS
+Điểm danh và điểm số ghi bằng Excel kết hợp sổ tay; đánh giá qua kiểm tra hàng tuần và cuối tháng; trao đổi qua Zalo
+Pain Point
+Dữ liệu phân tán, không đồng bộ; không lưu lịch sử đề xuất chuyển cấp; tính phụ thu thủ công dễ sai
+TO-BE
+Điểm danh và kết quả đánh giá là nguồn dữ liệu chuẩn duy nhất; hệ thống kiểm tra điều kiện vượt cấp và tự tính phụ thu; lưu đầy đủ các lần đề xuất và quyết định
+Input / Process / Output (IPO)
+Thành phần
+Nội dung
+Actor
+Giáo viên, Quản lý trung tâm, Học viên
+Input
+Kết quả kiểm tra hàng tuần và cuối tháng; dữ liệu điểm danh
+Process
+Giáo viên nhập điểm → hệ thống đối chiếu điều kiện vượt cấp (BR-TR-01) hoặc Giáo viên đề xuất giữa kỳ → Quản lý phê duyệt → hệ thống tính phụ thu (BR-TR-02) → gửi đề xuất kèm chi phí cho học viên → học viên xác nhận hoặc từ chối → cập nhật kết quả và lưu lịch sử
+Output
+Kết quả đánh giá định kỳ; quyết định chuyển cấp độ (hoặc giữ nguyên) được ghi nhận
+Data
+Kết quả đánh giá, Điểm danh, Đề xuất chuyển cấp, Phiếu thu (phụ thu), Ghi danh
+Exception
+Học viên từ chối chuyển lớp → giữ nguyên lớp, lưu lịch sử (BR-TR-04)
+Alternative / Exception Flow
+Main Flow: kiểm tra định kỳ → không vượt cấp độ → tiếp tục học lớp hiện tại.
+Alternative Flow (đồng ý chuyển): vượt cấp độ → tính phụ thu → đề xuất → học viên đồng ý → chuyển lớp mới, cập nhật thời khóa biểu và học phí liên quan.
+Alternative Flow (từ chối chuyển): vượt cấp độ → tính phụ thu → đề xuất → học viên từ chối → giữ lớp hiện tại → lưu lịch sử đề xuất và từ chối.
+Alternative Flow (giáo viên đề xuất giữa kỳ): giáo viên thấy học viên vượt trội rõ rệt qua bài kiểm tra hàng tuần → chủ động đề xuất với Quản lý, không cần chờ đủ chu kỳ đánh giá 1 tháng (BR-TR-01b).
+4.6. Luồng 6 — Giáo viên xin nghỉ, lùi lịch, dạy bù, thay giáo viên
+Luồng này xử lý tình huống một giáo viên không thể dạy một buổi đã xếp lịch khi khóa học đang diễn ra, khác với BR-SCH-02 ở Luồng 2 (chỉ xử lý xung đột khi mới xếp lịch đầu khóa).
+Sơ đồ AS-IS
+Pain Point
+Tra cứu khung giờ trống hoặc giáo viên rảnh cùng cấp độ làm thủ công (Excel, Zalo), tốn thời gian và dễ nhầm lẫn.
+Không có cơ chế theo dõi tổng số buổi đã dạy và còn nợ trên mỗi lớp, dễ quên dạy bù đủ buổi trước khi khóa kết thúc.
+Không lưu lịch sử các lần giáo viên xin nghỉ, khó tra cứu hoặc đánh giá sau này.
+Sơ đồ TO-BE (luồng chính — lùi lịch)
+Sơ đồ TO-BE (khi không lùi được lịch — đổi giáo viên, dạy bù, học online)
+Phân tích khoảng cách
+Khía cạnh
+Nội dung
+AS-IS
+Giáo viên báo nghỉ qua Zalo (trước ≥1 ngày, hoặc đột xuất); Quản lý phê duyệt và tự tìm phương án (lùi lịch, đổi giáo viên, dạy bù) qua Excel và Zalo
+Pain Point
+Tra cứu thủ công tốn thời gian, dễ sai; không theo dõi được số buổi nợ; không lưu lịch sử xin nghỉ
+TO-BE
+Giáo viên gửi yêu cầu nghỉ dạy trên hệ thống; hệ thống gợi ý theo đúng thứ tự ưu tiên (lùi lịch, đổi giáo viên, dạy bù, học online); tự cập nhật số buổi đã dạy và còn nợ trên tổng số buổi khóa
+Input / Process / Output (IPO)
+Thành phần
+Nội dung
+Actor
+Giáo viên, Quản lý trung tâm
+Input
+Yêu cầu nghỉ dạy (buổi học, lý do, thời điểm gửi); danh sách khung giờ và giáo viên khả dụng
+Process
+Giáo viên gửi yêu cầu → Quản lý phê duyệt → thử lùi lịch → nếu không được thì thử đổi giáo viên cùng cấp độ → nếu không được thì đánh dấu nghỉ và xếp dạy bù → nếu buổi bù không học trực tiếp được thì chuyển online → cập nhật số buổi đã dạy và còn nợ
+Output
+Buổi học được xử lý theo một trong 4 phương án (lùi lịch, đổi giáo viên, dạy bù, học online); số buổi còn nợ của lớp được cập nhật
+Data
+Yêu cầu nghỉ dạy, Lịch dạy (buổi học)
+Exception
+Không phê duyệt → giáo viên vẫn dạy theo lịch cũ; hết khóa mà chưa dạy đủ buổi → xem BR-TCH-04
+Alternative / Exception Flow
+Main Flow: giáo viên xin nghỉ → Quản lý phê duyệt → lùi lịch thành công → kết thúc.
+Alternative Flow 1 (đổi giáo viên): không lùi lịch được → tìm giáo viên khác cùng cấp độ đang rảnh → đổi giáo viên dạy đúng buổi đó.
+Alternative Flow 2 (dạy bù): không lùi được và không tìm được giáo viên thay (kể cả việc đột xuất như chấn thương, việc gia đình gấp) → buổi học được cho nghỉ → giáo viên gốc dạy bù vào buổi trống khác, miễn còn trong thời gian khóa học.
+Alternative Flow 3 (dạy bù online): buổi dạy bù không thể tổ chức trực tiếp → chuyển sang học online.
+Exception Flow: Quản lý từ chối yêu cầu nghỉ → giáo viên vẫn dạy theo lịch ban đầu.
+4.7. Luồng 7 — Học viên xin nghỉ và điểm danh học viên
+Hiện học viên phải xin nghỉ trước buổi học ít nhất 30 phút qua Zalo cho giáo viên; quá hạn thì bị ghi Vắng không phép. Quy tắc 30 phút này có trong sơ đồ gốc và được đưa vào BR-LEAVE-05.
+Sơ đồ AS-IS
+Pain Point
+Giáo viên điểm danh bằng Excel kết hợp sổ tay tại lớp; dữ liệu phân tán hai nơi, không đồng bộ tức thời.
+Khó tổng hợp số buổi có mặt và vắng của từng học viên trong cả khóa để theo dõi chuyên cần hoặc báo cho phụ huynh.
+Sổ tay dễ thất lạc, dễ nhầm giữa các lớp và các buổi; chưa phân biệt rõ vắng có phép và vắng không phép trong dữ liệu.
+Xin nghỉ qua Zalo nên khó truy lại ai gửi yêu cầu, thời điểm gửi, trạng thái xử lý và lý do xử lý.
+Sơ đồ TO-BE
+Phân tích khoảng cách
+Khía cạnh
+Nội dung
+AS-IS
+Học viên hoặc phụ huynh nhắn Zalo xin nghỉ trước ít nhất 30 phút; giáo viên đọc, xem xét lý do và phản hồi; điểm danh bằng Excel và sổ tay
+Pain Point
+Dữ liệu điểm danh phân tán; khó tổng hợp chuyên cần; khó theo dõi lịch sử xin nghỉ và đối chiếu với điểm danh thực tế
+TO-BE
+Học viên tạo yêu cầu xin nghỉ trên hệ thống (chọn buổi, ghi lý do); yêu cầu gửi đến giáo viên phụ trách, quá hạn 30 phút hệ thống tự từ chối; giáo viên duyệt hoặc từ chối; khi duyệt, hệ thống lưu trạng thái Vắng có phép cho buổi đó; giáo viên điểm danh trực tiếp với 3 trạng thái Có mặt, Vắng có phép, Vắng không phép
+Input / Process / Output (IPO)
+Thành phần
+Nội dung
+Actor
+Học viên; Giáo viên; Quản lý trung tâm (chỉ xem tổng hợp chuyên cần)
+Input
+Yêu cầu xin nghỉ của học viên (buổi học, lý do); danh sách học viên của lớp; buổi học đã diễn ra (lịch dạy); trạng thái điểm danh từng học viên
+Process
+Học viên tạo yêu cầu xin nghỉ, chọn buổi và ghi lý do → hệ thống kiểm tra hạn 30 phút (BR-LEAVE-05) → yêu cầu gửi đến Giáo viên phụ trách buổi học → Giáo viên chấp thuận hoặc không chấp thuận (BR-LEAVE-06) → khi buổi học diễn ra, Giáo viên mở danh sách lớp và ghi trạng thái từng học viên: Có mặt, Vắng có phép, Vắng không phép → hệ thống lưu bản ghi, liên kết với yêu cầu xin nghỉ nếu có → cập nhật tổng hợp chuyên cần
+Output
+Yêu cầu xin nghỉ được lưu cùng trạng thái xử lý; bản ghi điểm danh từng học viên theo từng buổi; tổng hợp số buổi có mặt, vắng và tỷ lệ chuyên cần
+Data
+Yêu cầu xin nghỉ của học viên, Điểm danh, Ghi danh, Lớp, Lịch dạy
+Exception
+Yêu cầu gửi trễ hơn 30 phút → hệ thống tự từ chối, học viên vắng thì ghi Vắng không phép. Giáo viên chưa phản hồi trước giờ học → BR-LEAVE-07 [CẦN CHỐT]
+Ví dụ minh họa
+Cách tính vắng vào chuyên cần (ví dụ, chưa phải quy định): đến thời điểm xét lớp đã học 20 buổi; học viên A có mặt 17 buổi, vắng có phép 2 buổi, vắng không phép 1 buổi; tỷ lệ chuyên cần = 17 / 20 = 85%. [CẦN CHỐT: vắng có phép có được tính vào chuyên cần hay không]
+Alternative / Exception Flow
+Main Flow: học viên có nhu cầu nghỉ → tạo yêu cầu trên hệ thống trước giờ học ít nhất 30 phút → giáo viên chấp thuận → buổi học diễn ra → giáo viên điểm danh → hệ thống cập nhật chuyên cần.
+Alternative Flow (chấp thuận): giáo viên chấp thuận yêu cầu → hệ thống lưu trạng thái Vắng có phép cho buổi đó (BR-LEAVE-03) → giáo viên điểm danh và liên kết với yêu cầu.
+Alternative Flow (không chấp thuận): giáo viên từ chối → hệ thống gửi thông báo từ chối cho học viên → nếu học viên vẫn đến lớp thì ghi Có mặt; nếu vắng thì ghi Vắng không phép (BR-LEAVE-04).
+Alternative Flow (quá hạn 30 phút): hệ thống tự từ chối yêu cầu; nếu học viên vắng thì ghi Vắng không phép.
+Alternative Flow (không gửi yêu cầu): học viên không gửi yêu cầu và không tham gia buổi học → giáo viên ghi Vắng không phép.
+Exception Flow: buổi học bị lùi lịch hoặc cho nghỉ do giáo viên nghỉ (Luồng 6) chưa diễn ra nên không điểm danh; buổi dạy bù, dạy thay và học online khi đã diễn ra thì điểm danh bình thường.
+4.8. Xếp hạng Pain Point và phân tích nguyên nhân gốc (5 Whys)
+17 pain point được chấm điểm để xác định thứ tự ưu tiên: 4 pain point ở mức Cao, dẫn đầu là việc khó xác nhận đã đóng đủ học phí và dữ liệu điểm danh phân tán (20 điểm). Điểm ưu tiên = Mức ảnh hưởng × Tần suất, mỗi tiêu chí thang 1–5. Điểm do nhóm chấm [CẦN CHỐT: quản lý xác nhận lại].
+Mức ảnh hưởng: 1 = bất tiện nhỏ; 3 = mất thời gian hoặc sai sót nội bộ; 5 = tác động trực tiếp đến học viên, doanh thu hoặc việc tổ chức lớp.
+Tần suất: 1 = hiếm khi (vài lần mỗi năm); 3 = mỗi khóa học; 5 = hằng ngày hoặc mỗi buổi học.
+Mức ưu tiên: Cao (≥ 15); Trung bình (10–14); Thấp (< 10).
+Bảng 4.8a — Xếp hạng Pain Point theo Mức ảnh hưởng × Tần suất
+Hạng
+Luồng
+Pain Point
+Ảnh hưởng (1–5)
+Tần suất (1–5)
+Điểm
+Mức ưu tiên
+1
+L4
+Khó xác nhận nhanh học viên nào đã thanh toán đủ
+4
+5
+20
+Cao
+1
+L5
+Dữ liệu điểm danh và điểm số phân tán giữa Excel và sổ tay, không đồng bộ
+4
+5
+20
+Cao
+3
+L2
+Xếp lịch thủ công dễ trùng giờ giáo viên
+5
+3
+15
+Cao
+3
+L6
+Không theo dõi số buổi đã dạy và còn nợ, dễ quên dạy bù đủ buổi
+5
+3
+15
+Cao
+5
+L1
+Không có hồ sơ tập trung, không theo dõi được lịch sử cấp độ qua các khóa
+3
+4
+12
+Trung bình
+5
+L2
+Phối hợp lịch linh động của giáo viên nước ngoài phức tạp khi làm thủ công
+3
+4
+12
+Trung bình
+5
+L3
+Nhầm loại phòng hoặc phát hiện trùng phòng chuyên dụng muộn (giờ cao điểm)
+4
+3
+12
+Trung bình
+5
+L4
+Áp dụng giảm giá thủ công dễ sai khi có hơn 100 học viên
+4
+3
+12
+Trung bình
+5
+L7
+Khó tổng hợp chuyên cần của học viên trong cả khóa
+3
+4
+12
+Trung bình
+5
+L7
+Chưa phân biệt vắng có phép và vắng không phép trong dữ liệu
+3
+4
+12
+Trung bình
+11
+L1
+Kết quả test đầu vào bằng giấy dễ thất lạc
+3
+3
+9
+Thấp
+11
+L2
+Khó tìm lớp còn chỗ và khớp lịch khi học viên chuyển cấp giữa khóa
+3
+3
+9
+Thấp
+11
+L5
+Không lưu lịch sử đề xuất chuyển cấp (kể cả bị từ chối)
+3
+3
+9
+Thấp
+11
+L6
+Tra cứu khung giờ trống và giáo viên rảnh thủ công, tốn thời gian
+3
+3
+9
+Thấp
+15
+L5
+Tính phụ thu chuyển cấp thủ công dễ sai
+4
+2
+8
+Thấp
+15
+L7
+Khó truy lại người gửi, thời điểm và trạng thái xử lý yêu cầu xin nghỉ của học viên
+2
+4
+8
+Thấp
+17
+L6
+Không lưu lịch sử giáo viên xin nghỉ
+2
+3
+6
+Thấp
+Phân tích nguyên nhân gốc (5 Whys) cho 3 Pain Point ưu tiên
+Ba pain point được chọn vì điểm cao nhất (hai pain point đồng hạng 1, cộng pain point trùng giờ gắn với K1 và K2). Các câu trả lời Why được suy ra từ khảo sát AS-IS, cần kiểm chứng lại với Quản lý và giáo viên [CẦN CHỐT].
+Pain Point 1 (hạng 1): Dữ liệu điểm danh và điểm số phân tán giữa Excel và sổ tay
+Bước
+Nội dung
+Why 1
+Vì sao khó tổng hợp điểm danh và điểm số của một học viên? Vì dữ liệu nằm ở hai nơi: file Excel và sổ tay ghi tại lớp.
+Why 2
+Vì sao dữ liệu nằm ở hai nơi? Vì giáo viên ghi nhanh vào sổ tay ngay tại lớp, còn Excel được cập nhật riêng ở thời điểm khác.
+Why 3
+Vì sao không ghi thẳng vào Excel tại lớp? Vì không có công cụ chung thuận tiện để nhập tại chỗ; mỗi giáo viên giữ file hoặc sổ riêng theo thói quen.
+Why 4
+Vì sao mỗi giáo viên giữ riêng? Vì quy trình điểm danh và ghi điểm chưa được chuẩn hóa (ai nhập, nhập khi nào, theo mẫu nào, trạng thái nào).
+Why 5
+Vì sao chưa chuẩn hóa? Vì trung tâm mở rộng lên hơn 100 học viên dựa trên công cụ cá nhân sẵn có (Excel, Zalo, sổ tay) và chưa có hệ thống dữ liệu dùng chung.
+Nguyên nhân gốc
+Thiếu một hệ thống dữ liệu tập trung và quy trình điểm danh, ghi điểm chuẩn hóa.
+Giải pháp tương ứng
+Điểm danh và kết quả đánh giá nhập trực tiếp trên hệ thống với 3 trạng thái chuẩn (Có mặt, Vắng có phép, Vắng không phép); dữ liệu điểm danh là nguồn duy nhất (BR-ATT-04). Đo bằng K5.
+Pain Point 2 (hạng 1): Khó xác nhận nhanh học viên đã thanh toán đủ
+Bước
+Nội dung
+Why 1
+Vì sao khó xác nhận một học viên đã đóng đủ? Vì phải đối chiếu thủ công giữa sổ tay, phiếu thu và Excel cho từng học viên trong danh sách hơn 100.
+Why 2
+Vì sao phải đối chiếu thủ công? Vì không có con số "còn phải thu" tự động cho từng học viên (học phí theo cấp độ, trừ giảm giá, trừ đã đóng).
+Why 3
+Vì sao không có con số đó? Vì giảm giá được tính tay và khoản thu được ghi riêng lẻ, không gắn trực tiếp với hồ sơ học viên và lớp.
+Why 4
+Vì sao không gắn với hồ sơ học viên? Vì Excel và sổ tay không ràng buộc dữ liệu giữa học viên, học phí và thanh toán; việc ghi chép phụ thuộc thói quen người nhập.
+Why 5
+Vì sao vẫn làm theo cách này? Vì Quản lý trực tiếp đảm nhiệm cả tư vấn, xếp lớp và thu tiền (không có vị trí lễ tân hay kế toán riêng), nên ưu tiên thu nhanh hơn ghi chép chuẩn.
+Nguyên nhân gốc
+Thiếu liên kết dữ liệu giữa học viên, học phí và thanh toán, cộng với việc một người kiêm nhiều khâu mà không có công cụ hỗ trợ.
+Giải pháp tương ứng
+Bảng giá và phiếu thu gắn với hồ sơ học viên và ghi danh; chỉ xác nhận tham gia lớp khi thanh toán đủ 100% học phí sau giảm (BR-FEE-02, BR-FEE-03). Đo bằng K3 và K4.
+Pain Point 3 (hạng 3): Xếp lịch thủ công dễ trùng giờ giáo viên
+Bước
+Nội dung
+Why 1
+Vì sao xảy ra trùng giờ giáo viên? Vì một giáo viên có thể bị gán vào hai lớp cùng khung giờ mà không có cảnh báo.
+Why 2
+Vì sao không có cảnh báo? Vì lịch được lưu dạng bảng tĩnh (Excel) và trao đổi qua Zalo, không có cơ chế kiểm tra ràng buộc.
+Why 3
+Vì sao khó phát hiện bằng mắt? Vì phải phối hợp 6 giáo viên (gồm giáo viên nước ngoài lịch linh động), nhiều lớp theo cấp độ, 2 buổi mỗi tuần trong 3 tháng.
+Why 4
+Vì sao khối lượng này khó kiểm soát? Vì lịch thay đổi liên tục (nghỉ, lùi lịch, dạy bù, chuyển cấp) và mỗi thay đổi được nhắn qua Zalo rồi mới cập nhật lại Excel.
+Why 5
+Vì sao cập nhật chậm hoặc sót? Vì chỉ có một người (Quản lý) giữ bản lịch gốc và tự cập nhật, không có nguồn lịch duy nhất tự đồng bộ.
+Nguyên nhân gốc
+Lịch giảng dạy không phải nguồn dữ liệu duy nhất có kiểm tra ràng buộc; thay đổi được truyền qua kênh không có cấu trúc (Zalo).
+Giải pháp tương ứng
+Lịch dạy gắn giáo viên, lớp, phòng và khung giờ, tự cảnh báo và chặn khi trùng (BR-SCH-01, BR-ROOM-01). Đo bằng K1 và K2.
+4.9. Sơ đồ Use Case tổng thể
+Hệ thống có 4 actor và 18 use case; Quản lý và Giáo viên chủ yếu có nhiều use case nhất, Học viên và Phụ huynh chủ yếu xem và gửi yêu cầu.
+Sơ đồ Use Case
+Actor và use case liên quan
+Actor
+Use Case liên quan
+Học viên
+Đăng ký và làm test đầu vào; Xem kết quả học tập; Xin nghỉ học; Xác nhận hoặc từ chối đề xuất chuyển cấp độ
+Phụ huynh
+Xem kết quả học tập của con [CẦN CHỐT: có tài khoản]; Nhận thông báo tiến độ học tập (Could have)
+Giáo viên
+Chấm và nhập kết quả test đầu vào; Điểm danh; Nhập kết quả kiểm tra định kỳ; Xử lý yêu cầu xin nghỉ của học viên; Đề xuất chuyển cấp độ giữa kỳ; Xin nghỉ dạy hoặc lùi lịch
+Quản lý trung tâm
+Xếp lớp theo trình độ; Xếp lịch giảng dạy; Phân bổ phòng học; Thu học phí và áp dụng giảm giá; Đề xuất và phê duyệt chuyển cấp độ; Phê duyệt và xử lý nghỉ dạy; Xem tổng hợp chuyên cần và yêu cầu xin nghỉ (chỉ xem)
+5. Đặc tả yêu cầu hệ thống
+5.1. Business Rule
+Có 38 Business Rule chia theo 9 nhóm. Cột "Xác nhận bởi" ghi người đã xác nhận; "Đề xuất" là quy tắc do nhóm đề xuất để lấp chỗ trống và cần Quản lý xác nhận; "CẦN CHỐT" là chưa rõ người xác nhận hoặc chưa có quy định.
+Nhóm hồ sơ học viên
+ID
+Nội dung
+Xác nhận bởi
+BR-STU-01
+Mỗi học viên có một hồ sơ duy nhất trên hệ thống, tồn tại xuyên suốt các khóa học; kết quả test đầu vào và lịch sử cấp độ được lưu trong cùng hồ sơ
+CẦN CHỐT
+BR-STU-02
+Học viên của trung tâm đều dưới 18 tuổi; hồ sơ bắt buộc liên kết với ít nhất một phụ huynh hoặc người giám hộ có thông tin liên hệ
+CẦN CHỐT (xác nhận độ tuổi với quản lý)
+BR-STU-03
+Test đầu vào gồm đủ 4 kỹ năng (Listening, Speaking, Reading, Writing); band tổng = trung bình cộng điểm 4 kỹ năng, làm tròn đến 0,5 gần nhất theo quy tắc IELTS; chưa đủ điểm 4 kỹ năng thì chưa xác định cấp độ và chưa xếp lớp
+Quản lý
+BR-STU-04
+Mọi thay đổi cấp độ của học viên được lưu thành lịch sử theo thời gian, không ghi đè cấp độ cũ
+CẦN CHỐT
+BR-STU-05
+Học viên chỉ được nhận khi band tổng thuộc một cấp trong bảng giá (3.0 đến 8.0); không đạt cấp nào thì từ chối. Band 8.5 và 9.0 chưa có cấp độ: xử lý thế nào [CẦN CHỐT]
+Đề xuất
+Nhóm học phí
+ID
+Nội dung
+Xác nhận bởi
+BR-FEE-01
+Quản lý có thể áp dụng giảm giá học phí cho học viên trong một số trường hợp; mức giảm và điều kiện áp dụng do quản lý quyết định
+Quản lý
+BR-FEE-02
+Học phí phải thu = Học phí theo cấp độ IELTS (theo bảng giá bên dưới) trừ Giảm giá (nếu có)
+Quản lý
+BR-FEE-03
+Học viên phải thanh toán đủ 100% học phí (sau giảm giá nếu có) trước khi được xếp vào lớp và bắt đầu tham gia khóa học; trung tâm không áp dụng chính sách cho nợ học phí dưới bất kỳ hình thức nào
+Quản lý
+BR-FEE-04
+Mức giảm giá không được lớn hơn học phí của cấp độ
+Đề xuất
+Bảng giá học phí theo cấp độ (cấp độ = band tổng sau khi làm tròn 0,5)
+Cấp độ (band tổng)
+Học phí (VNĐ)
+3.0 – 3.5
+3.500.000
+4.0 – 4.5
+4.000.000
+5.0 – 5.5
+5.500.000
+6.0 – 6.5
+7.000.000
+7.0 – 8.0
+8.000.000
+Dưới 3.0; 8.5 và 9.0
+Chưa có trong bảng giá [CẦN CHỐT]
+Nhóm chuyển cấp độ
+ID
+Nội dung
+Xác nhận bởi
+BR-TR-01
+Học viên đủ điều kiện chuyển cấp khi: (a) trong một tháng liên tục, kết quả các bài kiểm tra hàng tuần và bài kiểm tra cuối tháng đều vượt mức cấp độ hiện tại; hoặc (b) Giáo viên chủ động đề xuất chuyển cấp giữa kỳ khi thấy học viên vượt trội rõ rệt qua các bài kiểm tra hàng tuần, trình Quản lý xem xét phê duyệt
+Giáo viên
+BR-TR-02
+Phụ thu = (Học phí cấp độ mới − Học phí cấp độ cũ) × (Số buổi học còn lại / Tổng số buổi của khóa)
+CẦN CHỐT
+BR-TR-03
+Nếu học viên đồng ý chuyển cấp thì thực hiện chuyển lớp và cập nhật phần học phí liên quan
+Quản lý
+BR-TR-04
+Nếu học viên từ chối thì giữ lớp hiện tại và lưu lại lịch sử đề xuất và từ chối
+Quản lý
+BR-TR-05
+"Vượt mức cấp độ hiện tại" (BR-TR-01a) = band của bài kiểm tra cao hơn cận trên của cấp độ lớp hiện tại, ở tất cả các bài kiểm tra tuần và bài cuối tháng trong 4 tuần liên tiếp. Ví dụ lớp 5.0 – 5.5 thì cần từ 6.0 trở lên
+Đề xuất [CẦN CHỐT]
+BR-TR-06
+"Số buổi học còn lại" trong BR-TR-02 = số buổi chưa diễn ra của khóa tại thời điểm chuyển lớp, kể cả buổi dạy bù đã xếp lịch
+Đề xuất
+BR-TR-07
+Phụ thu phải được thanh toán đủ trước khi học viên vào lớp mới (nhất quán với BR-FEE-03)
+Đề xuất
+BR-TR-08
+Hệ thống chỉ hỗ trợ chuyển lên cấp độ cao hơn; chuyển xuống cấp thấp hơn không thuộc phạm vi đợt này
+Đề xuất [CẦN CHỐT]
+Nhóm lịch dạy và phòng học
+ID
+Nội dung
+Xác nhận bởi
+BR-SCH-01
+Không cho phép xếp 2 lớp trùng khung giờ dạy cho cùng một giáo viên
+Quản lý
+BR-SCH-02
+Nếu giáo viên phụ trách không còn khung giờ rảnh phù hợp thì ưu tiên đổi sang giáo viên khác cùng cấp độ; nếu không có giáo viên nào rảnh thì chuyển lớp sang học online và điều chỉnh lịch phù hợp
+Quản lý
+BR-ROOM-01
+Không cho phép xếp 2 lớp trùng khung giờ trong cùng một phòng học
+Quản lý
+Nhóm giáo viên nghỉ dạy, lùi lịch, dạy bù
+ID
+Nội dung
+Xác nhận bởi
+BR-TCH-01
+Giáo viên cần báo nghỉ trước ít nhất 1 ngày; trường hợp đột xuất (ví dụ chấn thương, việc gia đình gấp) vẫn được chấp nhận ghi nhận
+Giáo viên
+BR-TCH-02
+Mọi yêu cầu nghỉ dạy phải được Quản lý trung tâm phê duyệt (có quyền từ chối)
+Giáo viên [CẦN CHỐT: quản lý xác nhận quyền này]
+BR-TCH-03
+Thứ tự xử lý khi giáo viên nghỉ 1 buổi: (1) thử lùi lịch sang khung giờ khác trong tuần, không kéo dài thời gian khóa; (2) nếu không lùi được, tìm giáo viên khác đủ cấp độ dạy thay đúng buổi; (3) nếu không tìm được giáo viên thay (kể cả việc đột xuất như chấn thương, việc gia đình gấp) thì buổi học được cho nghỉ và giáo viên gốc dạy bù vào buổi trống khác còn trong thời gian khóa (không nhất thiết trong tuần báo nghỉ); (4) nếu buổi dạy bù không thể học trực tiếp thì tổ chức học online
+Giáo viên
+BR-TCH-04
+Không giới hạn số lần giáo viên xin nghỉ hay lùi lịch trong một khóa, miễn đảm bảo dạy đủ tổng số buổi quy định của khóa trước khi kết thúc
+Giáo viên
+Nhóm điểm danh
+ID
+Nội dung
+Xác nhận bởi
+BR-ATT-01
+Giáo viên phụ trách buổi học điểm danh từng học viên của lớp cho mỗi buổi học đã diễn ra
+CẦN CHỐT (bản 4 ghi học viên)
+BR-ATT-02
+Mỗi học viên tại mỗi buổi học có đúng một trong ba trạng thái: Có mặt, Vắng có phép, Vắng không phép
+Giáo viên
+BR-ATT-03
+Học viên vắng buổi học không được dạy bù; hệ thống chỉ ghi nhận trạng thái vắng
+CẦN CHỐT (bản 4 ghi học viên)
+BR-ATT-04
+Dữ liệu điểm danh là nguồn dữ liệu duy nhất, liên kết học viên, buổi học, lớp; làm đầu vào cho đánh giá ở Luồng 5 và cho việc học viên xem kết quả học tập (chuyên cần)
+CẦN CHỐT
+Nhóm xin nghỉ của học viên
+ID
+Nội dung
+Xác nhận bởi
+BR-LEAVE-01
+Học viên có thể tạo yêu cầu xin nghỉ trực tiếp trên hệ thống, chọn buổi học muốn nghỉ và ghi rõ lý do
+CẦN CHỐT
+BR-LEAVE-02
+Yêu cầu xin nghỉ được lưu trên hệ thống để theo dõi trạng thái (Chờ duyệt, Chấp thuận, Từ chối), thời điểm gửi, buổi học, lý do, người xử lý và thời điểm xử lý
+CẦN CHỐT
+BR-LEAVE-03
+Khi yêu cầu xin nghỉ được chấp thuận và học viên không tham gia buổi học, trạng thái điểm danh là Vắng có phép
+CẦN CHỐT (bản 4 ghi học viên)
+BR-LEAVE-04
+Nếu học viên vắng nhưng không có yêu cầu hợp lệ hoặc yêu cầu không được chấp thuận thì Giáo viên ghi Vắng không phép; nếu yêu cầu bị từ chối mà học viên vẫn đến lớp thì ghi Có mặt
+CẦN CHỐT (bản 4 ghi học viên)
+BR-LEAVE-05
+Yêu cầu xin nghỉ phải được gửi trước giờ bắt đầu buổi học ít nhất 30 phút; quá hạn thì hệ thống tự từ chối
+Theo sơ đồ Luồng 7 bản 4, CẦN CHỐT quy tắc này
+BR-LEAVE-06
+Yêu cầu xin nghỉ do Giáo viên phụ trách buổi học chấp thuận hoặc từ chối; Quản lý chỉ được xem
+Theo sơ đồ Luồng 7 bản 4, CẦN CHỐT
+BR-LEAVE-07
+Giáo viên chưa phản hồi yêu cầu trước giờ học thì xử lý thế nào (coi như chưa chấp thuận, hoặc chuyển Quản lý xử lý)
+CẦN CHỐT
+Nhóm ghi danh và vận hành lớp
+Trung tâm chưa có quy định được ghi lại cho ba vấn đề dưới đây; nếu không có, ghi rõ là chưa xử lý trong đợt này.
+ID
+Nội dung
+Xác nhận bởi
+BR-ENR-01
+Hoàn tiền hoặc bảo lưu học phí khi học viên nghỉ giữa khóa
+CẦN CHỐT
+BR-ENR-02
+Đăng ký vào lớp giữa khóa (học phí tính thế nào, có được nhận không)
+CẦN CHỐT
+BR-ENR-03
+Sĩ số tối thiểu để mở lớp, sĩ số tối đa, hủy hoặc gộp lớp
+CẦN CHỐT
+5.2. User Story và tiêu chí chấp nhận
+Có 27 User Story, đánh số liên tục theo luồng. Cột “Business Rule” cho biết quy tắc mà story phải tuân thủ. Mọi story Must đều có Acceptance Criteria (AC) ở phần sau. Trạng thái yêu cầu dùng thống nhất ba giá trị: Chờ duyệt / Chấp thuận / Từ chối (cả yêu cầu nghỉ của giáo viên lẫn của học viên).
+Luồng 1 — Quản lý thông tin học viên
+Mã
+User Story
+Business Rule
+Ưu tiên
+US-01
+Là quản lý, tôi muốn tạo hồ sơ học viên mới trong vài phút, để không làm chậm quá trình tư vấn tuyển sinh.
+BR-STU-01, BR-STU-02
+Must
+US-02
+Là giáo viên, tôi muốn nhập trực tiếp kết quả test đầu vào (4 kỹ năng) vào hệ thống sau khi chấm, để không phải lưu giấy tờ rời rạc.
+BR-STU-03
+Must
+US-03
+Là quản lý, tôi muốn xem lịch sử cấp độ của một học viên qua các khóa học, để đánh giá quá trình tiến bộ.
+BR-STU-04
+Should
+Luồng 2 — Xếp lịch giảng dạy
+Mã
+User Story
+Business Rule
+Ưu tiên
+US-04
+Là quản lý, tôi muốn hệ thống tự cảnh báo khi xếp trùng giờ dạy của một giáo viên, để tránh phải sửa lịch nhiều lần.
+BR-SCH-01
+Must
+US-05
+Là quản lý, tôi muốn xếp lịch riêng cho giáo viên nước ngoài theo khung giờ linh động họ đăng ký, để không xung đột với lớp khác.
+BR-SCH-01
+Should
+US-06
+Là giáo viên, tôi muốn nhận thông báo lịch dạy ngay sau khi được xác nhận, để chủ động sắp xếp công việc cá nhân.
+–
+Should
+US-07
+Là quản lý, tôi muốn hệ thống gợi ý giáo viên thay thế cùng cấp độ khi giáo viên phụ trách không còn rảnh (hoặc đề xuất học online nếu không còn ai rảnh), để lịch học không bị gián đoạn.
+BR-SCH-02
+Should
+Luồng 3 — Phân bổ phòng học
+Mã
+User Story
+Business Rule
+Ưu tiên
+US-08
+Là quản lý, tôi muốn hệ thống gợi ý phòng còn trống đúng loại (Speaking / Listening / giảng dạy chung), để xếp phòng nhanh và chính xác.
+BR-ROOM-01
+Must
+US-09
+Là quản lý, tôi muốn hệ thống báo lỗi khi đặt trùng phòng cùng khung giờ, để tránh xung đột lịch sử dụng phòng.
+BR-ROOM-01
+Must
+Luồng 4 — Theo dõi thu học phí
+Mã
+User Story
+Business Rule
+Ưu tiên
+US-10
+Là quản lý, tôi muốn hệ thống hỗ trợ áp dụng giảm giá học phí khi cần, để không phải tính tay cho từng trường hợp.
+BR-FEE-01, BR-FEE-02
+Must
+US-11
+Là quản lý, tôi muốn xem nhanh học viên nào đã thanh toán đủ, để chỉ cho học viên đã đóng đủ vào lớp.
+BR-FEE-03, BR-ENR-01
+Must
+Luồng 5 — Kết quả học tập và đánh giá chuyển cấp độ
+Mã
+User Story
+Business Rule
+Ưu tiên
+US-12
+Là giáo viên, tôi muốn nhập điểm kiểm tra hàng tuần trực tiếp vào hệ thống, để dữ liệu cập nhật đồng bộ và không thất lạc.
+BR-TR-01
+Must
+US-13
+Là quản lý, tôi muốn hệ thống tự tính phụ thu khi học viên đủ điều kiện chuyển cấp độ, để tránh sai sót khi tính thủ công.
+BR-TR-02
+Must
+US-14
+Là quản lý, tôi muốn hệ thống lưu lại lịch sử các lần đề xuất chuyển cấp độ (kể cả khi học viên từ chối), để tra cứu khi cần.
+BR-TR-04
+Should
+US-15
+Là học viên, tôi muốn xem rõ 2 lựa chọn (chuyển lớp mới hoặc ở lại lớp hiện tại) kèm chi phí phát sinh, để tự quyết định phù hợp với lịch cá nhân.
+BR-TR-03, BR-TR-04
+Should
+US-16
+Là giáo viên, tôi muốn chủ động đề xuất chuyển cấp độ cho học viên vượt trội trong quá trình học, để không phải chờ đến kỳ đánh giá cuối tháng.
+BR-TR-05
+Should
+US-17
+Là học viên, tôi muốn xem trực tiếp điểm kiểm tra và chuyên cần của mình trên hệ thống, để nắm tiến độ kịp thời.
+BR-ATT-04
+Should
+Luồng 6 — Giáo viên xin nghỉ / lùi lịch / dạy bù / thay giáo viên
+Mã
+User Story
+Business Rule
+Ưu tiên
+US-18
+Là giáo viên, tôi muốn gửi yêu cầu nghỉ dạy trực tiếp trên hệ thống kèm lý do, để không phải nhắn tin thủ công.
+BR-TCH-01
+Must
+US-19
+Là quản lý, tôi muốn chấp thuận hoặc từ chối yêu cầu nghỉ dạy của giáo viên ngay trên hệ thống, để kiểm soát mọi thay đổi lịch.
+BR-TCH-02
+Must
+US-20
+Là quản lý, tôi muốn hệ thống gợi ý theo đúng thứ tự ưu tiên (lùi lịch → đổi giáo viên → dạy bù → học online) khi giáo viên nghỉ, để xử lý nhanh và không bỏ sót phương án.
+BR-TCH-03
+Must
+US-21
+Là quản lý, tôi muốn theo dõi số buổi đã dạy và còn nợ của mỗi lớp, để đảm bảo dạy đủ buổi trước khi khóa kết thúc.
+BR-TCH-04
+Should
+Luồng 7 — Học viên xin nghỉ và điểm danh
+Mã
+User Story
+Business Rule
+Ưu tiên
+US-22
+Là học viên, tôi muốn tạo yêu cầu xin nghỉ trên hệ thống, chọn buổi học và ghi lý do, để không phải xin phép qua kênh nhắn tin thủ công.
+BR-LEAVE-01, BR-LEAVE-02, BR-LEAVE-05
+Must
+US-23
+Là giáo viên phụ trách lớp, tôi muốn xem và chấp thuận / từ chối yêu cầu xin nghỉ của học viên lớp mình, để nắm tình trạng nghỉ từng buổi.
+BR-LEAVE-02, BR-LEAVE-06, BR-LEAVE-07
+Must
+US-24
+Là giáo viên, tôi muốn mở danh sách lớp của buổi học và điểm danh trực tiếp trên hệ thống, để không phải ghi Excel và sổ tay riêng.
+BR-ATT-01
+Must
+US-25
+Là giáo viên, tôi muốn chọn nhanh trạng thái Có mặt / Vắng có phép / Vắng không phép cho từng học viên, để điểm danh nhanh và đúng quy định.
+BR-ATT-02, BR-ATT-03, BR-LEAVE-03, BR-LEAVE-04
+Must
+US-26
+Là quản lý, tôi muốn xem (không xử lý) các yêu cầu xin nghỉ của học viên và tổng hợp chuyên cần theo học viên / lớp, để theo dõi tình hình học tập.
+BR-LEAVE-06, BR-ATT-04
+Should
+US-27
+Là phụ huynh, tôi muốn xem kết quả học tập và chuyên cần của con, để nắm tiến độ mà không phải hỏi qua tin nhắn.
+BR-ATT-04
+Should
+Tiêu chí chấp nhận (Acceptance Criteria) cho User Story Must
+Luồng 1
+Mã AC
+Given
+When
+Then
+AC-01.1
+Quản lý đã đăng nhập và đang tiếp một học viên mới.
+Nhập các trường bắt buộc (họ tên, ngày sinh, liên hệ phụ huynh) rồi lưu.
+Hồ sơ học viên được tạo và có trong danh sách; thao tác xong trong vài phút (đề xuất ≤ 3 phút).
+AC-01.2
+Quản lý đang tạo hồ sơ.
+Lưu khi còn thiếu trường bắt buộc.
+Hệ thống không lưu và chỉ rõ trường còn thiếu.
+AC-02.1
+Hồ sơ học viên đã có và giáo viên đã chấm bài test.
+Giáo viên nhập điểm 4 kỹ năng và lưu.
+Kết quả gắn vào hồ sơ học viên, ghi người nhập và thời điểm; không cần bản giấy riêng.
+AC-02.2
+Giáo viên đang nhập kết quả test đầu vào.
+Bỏ trống một kỹ năng hoặc nhập điểm ngoài thang 0–9.
+Hệ thống báo lỗi, không lưu cho đến khi hợp lệ.
+Luồng 2 và 3
+Mã AC
+Given
+When
+Then
+AC-04.1
+Giáo viên A đã có lớp thứ Hai 18:00–20:00.
+Quản lý xếp thêm lớp khác trùng hoặc giao nhau khung giờ đó cho A.
+Hệ thống cảnh báo trùng giờ và không cho lưu (BR-SCH-01).
+AC-04.2
+Giáo viên A không có lớp ở khung giờ cần xếp.
+Quản lý xếp lớp cho A.
+Lịch được lưu, không cảnh báo.
+AC-08.1
+Một lớp Speaking cần xếp phòng vào khung giờ X.
+Quản lý chọn khung giờ X để xem gợi ý.
+Chỉ gợi ý các phòng loại Speaking đang trống ở khung giờ X.
+AC-08.2
+Không còn phòng đúng loại trống ở khung giờ X.
+Quản lý xem gợi ý.
+Hệ thống báo không có phòng phù hợp, không gợi ý phòng sai loại.
+AC-09.1
+Phòng P đã gán cho lớp A thứ Ba 18:00–20:00.
+Quản lý xếp lớp B vào P trùng hoặc giao một phần khung giờ.
+Hệ thống báo lỗi trùng phòng và không lưu (BR-ROOM-01).
+Luồng 4
+Mã AC
+Given
+When
+Then
+AC-10.1
+Học viên band 5.0–5.5 (học phí 5.500.000 VNĐ).
+Quản lý áp mức giảm 500.000 VNĐ và lưu.
+Học phí phải thu là 5.000.000 VNĐ; hệ thống lưu mức giảm và người áp dụng.
+AC-10.2
+Học viên không được giảm giá.
+Quản lý lập phiếu thu.
+Học phí phải thu đúng bằng học phí của cấp độ trong bảng giá.
+AC-10.3
+Quản lý đang nhập mức giảm.
+Mức giảm lớn hơn học phí của cấp độ.
+Hệ thống báo lỗi, không cho lưu.
+AC-11.1
+Học viên có phiếu thu chưa đủ so với học phí phải thu.
+Quản lý xem trạng thái ghi danh.
+Học viên hiển thị “Chưa đủ điều kiện”, không được xếp vào lớp (BR-ENR-01).
+AC-11.2
+Học viên đã thanh toán đủ.
+Quản lý xem trạng thái ghi danh.
+Học viên hiển thị đủ điều kiện và được xếp lớp.
+Luồng 5
+Mã AC
+Given
+When
+Then
+AC-12.1
+Giáo viên được phân công lớp và buổi kiểm tra tuần đã diễn ra.
+Nhập điểm cho từng học viên của lớp và lưu.
+Điểm gắn đúng học viên, lớp, tuần; quản lý xem được ngay, không cần Excel.
+AC-12.2
+Giáo viên đang nhập điểm cho một lớp.
+Tìm học viên không thuộc lớp đó.
+Hệ thống không cho chọn học viên ngoài danh sách lớp.
+AC-13.1
+Học viên cấp 4.0–4.5 (4.000.000) đủ điều kiện lên 5.0–5.5 (5.500.000); khóa 24 buổi còn 12 buổi.
+Quản lý tạo đề xuất chuyển cấp.
+Phụ thu tự hiển thị 750.000 VNĐ = (5.500.000 − 4.000.000) × 12/24 (BR-TR-02).
+AC-13.2
+Cùng trường hợp nhưng khóa chỉ còn 6 buổi.
+Quản lý tạo đề xuất.
+Phụ thu tự tính lại là 375.000 VNĐ.
+Luồng 6
+Mã AC
+Given
+When
+Then
+AC-18.1
+Giáo viên có buổi dạy trong lịch, còn ít nhất 1 ngày trước buổi đó.
+Tạo yêu cầu nghỉ, chọn buổi, nhập lý do và gửi.
+Yêu cầu ở trạng thái Chờ duyệt; ghi người gửi, thời điểm, buổi, lý do (BR-TCH-01).
+AC-18.2
+Buổi dạy diễn ra trong vòng dưới 1 ngày.
+Giáo viên gửi yêu cầu kèm lý do.
+Hệ thống vẫn ghi nhận và đánh dấu nghỉ đột xuất, không chặn gửi.
+AC-18.3
+Giáo viên đang tạo yêu cầu nghỉ.
+Gửi khi chưa nhập lý do.
+Hệ thống không gửi, yêu cầu nhập lý do.
+AC-19.1
+Có yêu cầu nghỉ dạy ở trạng thái Chờ duyệt.
+Quản lý chọn Chấp thuận.
+Trạng thái chuyển Chấp thuận và yêu cầu chuyển sang bước xử lý lịch (BR-TCH-02).
+AC-19.2
+Có yêu cầu nghỉ dạy ở trạng thái Chờ duyệt.
+Quản lý chọn Từ chối.
+Trạng thái chuyển Từ chối, lịch giữ nguyên; yêu cầu lưu trong lịch sử.
+AC-20.1
+Yêu cầu nghỉ dạy đã Chấp thuận.
+Hệ thống tìm phương án.
+Trước hết gợi ý khung giờ lùi lịch khác trong tuần, không kéo dài khóa (BR-TCH-03).
+AC-20.2
+Không có khung giờ lùi lịch phù hợp.
+Hệ thống tìm phương án tiếp theo.
+Gợi ý giáo viên khác đủ cấp độ và rảnh đúng buổi đó.
+AC-20.3
+Không có giáo viên thay thế.
+Hệ thống tìm phương án tiếp theo.
+Đánh dấu buổi cần dạy bù và gợi ý buổi trống trong thời gian khóa; nếu không thể thì đề xuất học online.
+Luồng 7
+Mã AC
+Given
+When
+Then
+AC-22.1
+Học viên có tài khoản, thuộc lớp có buổi học sắp diễn ra (còn từ 30 phút trở lên).
+Tạo yêu cầu xin nghỉ, chọn buổi và nhập lý do.
+Yêu cầu được lưu cùng thời điểm gửi, buổi, lý do, trạng thái Chờ duyệt (BR-LEAVE-01, 02).
+AC-22.2
+Học viên đang tạo yêu cầu xin nghỉ.
+Chọn buổi không thuộc lớp của mình hoặc buổi đã diễn ra.
+Hệ thống không cho chọn các buổi này.
+AC-22.3
+Buổi học bắt đầu trong chưa đầy 30 phút.
+Học viên gửi yêu cầu xin nghỉ.
+Hệ thống tự động từ chối và thông báo lý do quá hạn (BR-LEAVE-05).
+AC-23.1
+Giáo viên là người phụ trách lớp của học viên và có yêu cầu xin nghỉ ở trạng thái Chờ duyệt.
+Giáo viên mở danh sách yêu cầu xin nghỉ.
+Thấy đủ học viên, buổi, lý do, thời điểm gửi, trạng thái.
+AC-23.2
+Giáo viên đang xem một yêu cầu xin nghỉ của lớp mình.
+Chọn Chấp thuận hoặc Từ chối.
+Trạng thái cập nhật, lưu người xử lý và thời điểm; học viên xem được kết quả (BR-LEAVE-06).
+AC-23.3
+Một người dùng không phải giáo viên phụ trách lớp (kể cả quản lý).
+Cố chấp thuận / từ chối yêu cầu xin nghỉ của lớp đó.
+Hệ thống không cho xử lý; quản lý chỉ được xem (BR-LEAVE-06).
+AC-23.4
+Yêu cầu xin nghỉ vẫn Chờ duyệt khi giáo viên chưa phản hồi.
+Đến thời điểm buổi học bắt đầu.
+[CẦN CHỐT] — xử lý theo BR-LEAVE-07 sau khi trung tâm xác nhận (tự chấp thuận / tự từ chối / báo quản lý).
+AC-24.1
+Buổi học đã diễn ra và giáo viên là người phụ trách.
+Mở buổi học để điểm danh.
+Hiển thị đầy đủ danh sách học viên của lớp (BR-ATT-01).
+AC-24.2
+Giáo viên không phụ trách lớp của buổi học.
+Cố mở điểm danh buổi đó.
+Hệ thống không cho điểm danh.
+AC-24.3
+Giáo viên đã điểm danh xong cả lớp.
+Lưu.
+Dữ liệu lưu tập trung, liên kết học viên – buổi – lớp (BR-ATT-04), không cần ghi thêm Excel hay sổ tay.
+AC-25.1
+Giáo viên đang điểm danh.
+Lưu khi còn học viên chưa chọn trạng thái.
+Hệ thống báo chưa hoàn tất; mỗi học viên phải có đúng một trong ba trạng thái (BR-ATT-02).
+AC-25.2
+Học viên có yêu cầu xin nghỉ đã Chấp thuận cho buổi này.
+Giáo viên mở điểm danh buổi đó.
+Học viên được ghi nhận Vắng có phép (BR-LEAVE-03).
+AC-25.3
+Học viên vắng nhưng không có yêu cầu hợp lệ, hoặc yêu cầu bị Từ chối.
+Giáo viên chọn Vắng không phép và lưu.
+Lưu Vắng không phép (BR-LEAVE-04); chỉ ghi nhận vắng, không phát sinh dạy bù cho học viên đó (BR-ATT-03).
