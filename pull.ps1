@@ -1,7 +1,7 @@
-Write-Host "📥 1. Dang keo cap nhat moi nhat tu GitHub..." -ForegroundColor Cyan
+Write-Host "[1/2] Dang keo cap nhat moi nhat tu GitHub..." -ForegroundColor Cyan
 git pull origin main
 
-Write-Host "🔄 2. Dang dong bo cac DocType vao Docker va cap nhat Database..." -ForegroundColor Cyan
+Write-Host "[2/2] Dang dong bo cac DocType vao Docker va cap nhat Database..." -ForegroundColor Cyan
 
 docker exec -w /workspace devcontainer-example-frappe-1 bash -c "
 for d in /workspace/custom_doctypes/*/; do
@@ -16,5 +16,5 @@ cp -r /workspace/custom_doctypes/custom/* /workspace/development/frappe-bench/ap
 cd /workspace/development/frappe-bench && bench --site school.localhost migrate
 "
 
-Write-Host "🎉 HOAN TAT! Toan bo DocType va cau hinh moi da duoc cap nhat vao may cua ban." -ForegroundColor Green
-Write-Host "👉 Hay mo trinh duyet (http://localhost:8000/app) de tiep tuc lam viec nhe!" -ForegroundColor Yellow
+Write-Host "HOAN TAT! Toan bo DocType va cau hinh moi da duoc cap nhat vao may cua ban." -ForegroundColor Green
+Write-Host "Hay mo trinh duyet (http://localhost:8000/app) de tiep tuc lam viec nhe!" -ForegroundColor Yellow

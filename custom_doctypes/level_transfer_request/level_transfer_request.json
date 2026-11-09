@@ -33,13 +33,13 @@
   {
    "fieldname": "sec_student",
    "fieldtype": "Section Break",
-   "label": "Th\u00f4ng tin H\u1ecdc vi\u00ean & L\u1edbp h\u1ecdc"
+   "label": "Thông tin Học viên & Lớp học"
   },
   {
    "fieldname": "student",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "H\u1ecdc vi\u00ean",
+   "label": "Học viên",
    "options": "Student",
    "reqd": 1
   },
@@ -47,21 +47,21 @@
    "fetch_from": "student.student_name",
    "fieldname": "student_name",
    "fieldtype": "Data",
-   "label": "H\u1ecd v\u00e0 t\u00ean",
+   "label": "Họ và tên",
    "read_only": 1
   },
   {
    "fieldname": "current_program",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "C\u1ea5p \u0111\u1ed9 hi\u1ec7n t\u1ea1i",
+   "label": "Cấp độ hiện tại",
    "options": "Program",
    "reqd": 1
   },
   {
    "fieldname": "current_student_group",
    "fieldtype": "Link",
-   "label": "L\u1edbp hi\u1ec7n t\u1ea1i",
+   "label": "Lớp hiện tại",
    "options": "Student Group"
   },
   {
@@ -72,51 +72,51 @@
    "fieldname": "new_program",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "C\u1ea5p \u0111\u1ed9 m\u1edbi \u0111\u1ec1 xu\u1ea5t",
+   "label": "Cấp độ mới đề xuất",
    "options": "Program",
    "reqd": 1
   },
   {
    "fieldname": "new_student_group",
    "fieldtype": "Link",
-   "label": "L\u1edbp m\u1edbi d\u1ef1 ki\u1ebfn",
+   "label": "Lớp mới dự kiến",
    "options": "Student Group"
   },
   {
    "fieldname": "proposed_by",
    "fieldtype": "Link",
-   "label": "Gi\u00e1o vi\u00ean \u0111\u1ec1 xu\u1ea5t",
+   "label": "Giáo viên đề xuất",
    "options": "Instructor"
   },
   {
    "fieldname": "transfer_reason",
    "fieldtype": "Select",
-   "label": "L\u00fd do chuy\u1ec3n c\u1ea5p",
-   "options": "V\u01b0\u1ee3t c\u1ea5p qua b\u00e0i ki\u1ec3m tra tu\u1ea7n/th\u00e1ng (BR-TR-01a)\nGi\u00e1o vi\u00ean ch\u1ee7 \u0111\u1ed9ng \u0111\u1ec1 xu\u1ea5t gi\u1eefa k\u1ef3 (BR-TR-01b)\nKh\u00e1c"
+   "label": "Lý do chuyển cấp",
+   "options": "Vượt cấp qua bài kiểm tra tuần/tháng (BR-TR-01a)\nGiáo viên chủ động đề xuất giữa kỳ (BR-TR-01b)\nKhác"
   },
   {
    "fieldname": "sec_fee",
    "fieldtype": "Section Break",
-   "label": "T\u00ednh to\u00e1n Ph\u1ee5 thu "
+   "label": "Tính toán Phụ thu (BR-TR-02)"
   },
   {
    "default": "24",
    "fieldname": "total_sessions",
    "fieldtype": "Int",
-   "label": "T\u1ed5ng s\u1ed1 bu\u1ed5i kh\u00f3a h\u1ecdc",
+   "label": "Tổng số buổi khóa học",
    "reqd": 1
   },
   {
    "fieldname": "remaining_sessions",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "S\u1ed1 bu\u1ed5i c\u00f2n l\u1ea1i",
+   "label": "Số buổi còn lại",
    "reqd": 1
   },
   {
    "fieldname": "current_fee",
    "fieldtype": "Currency",
-   "label": "H\u1ecdc ph\u00ed c\u1ea5p c\u0169",
+   "label": "Học phí cấp cũ",
    "reqd": 1
   },
   {
@@ -126,7 +126,7 @@
   {
    "fieldname": "new_fee",
    "fieldtype": "Currency",
-   "label": "H\u1ecdc ph\u00ed c\u1ea5p m\u1edbi",
+   "label": "Học phí cấp mới",
    "reqd": 1
   },
   {
@@ -134,27 +134,27 @@
    "fieldname": "additional_fee",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "S\u1ed1 ti\u1ec1n ph\u1ee5 thu",
+   "label": "Số tiền phụ thu",
    "read_only": 1
   },
   {
    "fieldname": "sec_status",
    "fieldtype": "Section Break",
-   "label": "Tr\u1ea1ng th\u00e1i & Quy\u1ebft \u0111\u1ecbnh"
+   "label": "Trạng thái & Quyết định"
   },
   {
-   "default": "Ch\u1edd duy\u1ec7t",
+   "default": "Chờ duyệt",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Tr\u1ea1ng th\u00e1i",
-   "options": "Ch\u1edd duy\u1ec7t\nH\u1ecdc vi\u00ean \u0111\u1ed3ng \u00fd\nH\u1ecdc vi\u00ean t\u1eeb ch\u1ed1i\n\u0110\u00e3 thanh to\u00e1n ph\u1ee5 thu\nHo\u00e0n t\u1ea5t chuy\u1ec3n l\u1edbp"
+   "label": "Trạng thái",
+   "options": "Chờ duyệt\nHọc viên đồng ý\nHọc viên từ chối\nĐã thanh toán phụ thu\nHoàn tất chuyển lớp"
   },
   {
-   "depends_on": "eval:doc.status=='H\u1ecdc vi\u00ean t\u1eeb ch\u1ed1i'",
+   "depends_on": "eval:doc.status=='Học viên từ chối'",
    "fieldname": "rejection_reason",
    "fieldtype": "Small Text",
-   "label": "L\u00fd do t\u1eeb ch\u1ed1i (n\u1ebfu c\u00f3)"
+   "label": "Lý do từ chối (nếu có)"
   },
   {
    "fieldname": "col_break_3",
@@ -163,7 +163,7 @@
   {
    "fieldname": "fees_doc",
    "fieldtype": "Link",
-   "label": "Phi\u1ebfu thu ph\u1ee5 thu",
+   "label": "Phiếu thu phụ thu",
    "options": "Fees",
    "read_only": 1
   },
@@ -181,7 +181,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-11-08 19:10:15.943343",
+ "modified": "2026-11-08 19:04:00.000000",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Level Transfer Request",

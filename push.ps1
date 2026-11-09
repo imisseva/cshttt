@@ -2,7 +2,7 @@ param(
     [string]$message = "update customizations and doctypes"
 )
 
-Write-Host "📦 1. Dang tu dong quet cac DocType moi va Customizations..." -ForegroundColor Cyan
+Write-Host "[1/2] Dang tu dong quet cac DocType moi va Customizations..." -ForegroundColor Cyan
 
 # Danh sach cac DocType goc cua Frappe Education (khong can copy)
 $standardDocTypes = @(
@@ -17,7 +17,7 @@ $standardDocTypes = @(
     "options", "payment_record", "program", "program_course", "program_enrollment",
     "program_enrollment_course", "program_enrollment_fee", "program_enrollment_tool",
     "program_enrollment_tool_student", "program_fee", "question", "quiz", "quiz_activity",
-    "quiz_question", "quiz_result", "room", "school_house", "student", "student_admission",
+    "quiz_question", "quiz_result", "room", "school_house", "student_admission",
     "student_admission_program", "student_applicant", "student_attendance", "student_attendance_tool",
     "student_batch_name", "student_category", "student_group", "student_group_creation_tool",
     "student_group_creation_tool_course", "student_group_instructor", "student_group_student",
@@ -49,9 +49,9 @@ if (Test-Path $customSource) {
     Copy-Item -Recurse -Force "$customSource\*" custom_doctypes\custom\
 }
 
-Write-Host "🚀 2. Dang day len GitHub..." -ForegroundColor Cyan
+Write-Host "[2/2] Dang day len GitHub..." -ForegroundColor Cyan
 git add custom_doctypes README.md push.ps1 pull.ps1
 git commit -m $message
 git push origin main
 
-Write-Host "✅ Da day len GitHub thanh cong voi thong diep: '$message'" -ForegroundColor Green
+Write-Host "HOAN TAT! Da day len GitHub thanh cong voi thong diep: '$message'" -ForegroundColor Green
