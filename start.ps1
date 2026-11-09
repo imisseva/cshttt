@@ -1,4 +1,4 @@
-﻿Write-Host "🟢 1. Dang khoi dong cac container Docker..." -ForegroundColor Cyan
+Write-Host "🟢 1. Dang khoi dong cac container Docker..." -ForegroundColor Cyan
 docker-compose -f frappe_docker/devcontainer-example/docker-compose.yml up -d
 
 Write-Host "🚀 2. Dang khoi dong Web Server ERPNext..." -ForegroundColor Cyan

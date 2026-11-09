@@ -1,4 +1,4 @@
-﻿Write-Host "📥 1. Dang keo du lieu moi nhat tu GitHub ve may..." -ForegroundColor Cyan
+Write-Host "📥 1. Dang keo du lieu moi nhat tu GitHub ve may..." -ForegroundColor Cyan
 git pull origin main
 
 if (-not (Test-Path "data_backup\database.sql.gz")) {
