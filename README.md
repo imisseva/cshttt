@@ -8,6 +8,9 @@ Hệ thống quản lý giáo dục & trường học chạy trên nền tảng 
 - Mã Python kiểm tra giờ rảnh, phân công và trùng lịch khi lưu Course Schedule.
 - Client Script tính band IELTS, kiểm tra giờ rảnh, sửa bộ lọc Instructor và bản xuất bốn Client Script.
 - [Hướng dẫn cài đặt và kiểm thử luồng xếp lịch](guides/luong_2/README.md).
+- [Luồng 3 — Phân bổ phòng học theo loại phòng](guides/luong_3/README.md).
+- [Luồng 4 — Chặn ghi danh khi chưa đóng đủ học phí](guides/luong_4/README.md).
+- [Hướng dẫn test tay Luồng 3 & 4 qua frontend](docs/huong_dan_test_thu_cong_luong_3_4.md).
 
 Client Script lọc giáo viên theo giờ rảnh trên Course Schedule đang tắt trong
 bản xuất; bật lại khi kiểm thử theo hướng dẫn. Chạy `pull.ps1` để nạp DocType,
