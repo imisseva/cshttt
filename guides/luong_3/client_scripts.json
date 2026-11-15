@@ -1,0 +1,10 @@
+[
+  {
+    "doctype": "Client Script",
+    "name": "Lọc phòng theo loại phòng",
+    "dt": "Course Schedule",
+    "view": "Form",
+    "enabled": 1,
+    "script": "function ling_set_room_query(frm) {\n    frm.set_query(\"room\", () => ({\n        query: \"education.ling_room.room_query\",\n        filters: {\n            course: frm.doc.course\n        }\n    }));\n}\n\nfrappe.ui.form.on(\"Course Schedule\", {\n    onload_post_render: ling_set_room_query,\n    refresh: ling_set_room_query,\n    course: ling_set_room_query\n});\n"
+  }
+]

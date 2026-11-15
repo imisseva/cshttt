@@ -1,0 +1,10 @@
+[
+  {
+    "doctype": "Client Script",
+    "name": "Kiểm tra học phí Student Group",
+    "dt": "Student Group",
+    "view": "Form",
+    "enabled": 1,
+    "script": "frappe.ui.form.on(\"Student Group\", {\n    refresh(frm) {\n        frm.add_custom_button(__(\"Kiểm tra học phí\"), () => {\n            const students = (frm.doc.students || [])\n                .map(row => row.student)\n                .filter(Boolean);\n\n            if (!students.length) {\n                frappe.msgprint(\"Chưa có học viên nào trong lớp.\");\n                return;\n            }\n\n            frappe.call({\n                method: \"education.ling_fees.check_group_fees\",\n                args: { students: students, program: frm.doc.program },\n                callback(r) {\n                    const rows = (r.message || []).map(item => {\n                        const outstanding = item.outstanding_amount == null\n                            ? \"Chưa có phiếu thu\"\n                            : item.outstanding_amount;\n                        return item.student + \" - còn nợ \" + outstanding + \" - \" +\n                            (item.fully_paid ? \"Đã đóng đủ\" : \"Chưa đóng đủ\");\n                    });\n\n                    frappe.msgprint({\n                        title: __(\"Kết quả kiểm tra học phí\"),\n                        message: rows.join(\"<br>\") || \"Không có dữ liệu.\",\n                        indicator: \"blue\"\n                    });\n                }\n            });\n        }).addClass(\"btn-primary\");\n    }\n});\n"
+  }
+]
