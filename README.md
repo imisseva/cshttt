@@ -6,9 +6,8 @@ Hệ thống quản lý giáo dục & trường học chạy trên nền tảng 
 
 - Hai DocType: **IELTS Placement Test** và **Instructor Availability**.
 - Mã Python kiểm tra giờ rảnh, phân công và trùng lịch khi lưu Course Schedule.
-- Client Script sửa bộ lọc Instructor trong Student Group và bản xuất ba Client Script.
+- Client Script tính band IELTS, kiểm tra giờ rảnh, sửa bộ lọc Instructor và bản xuất bốn Client Script.
 - [Hướng dẫn cài đặt và kiểm thử luồng xếp lịch](guides/luong_2/README.md).
-- [Khởi động môi trường Docker trên Windows](RUN-WINDOWS.md).
 
 Client Script lọc giáo viên theo giờ rảnh trên Course Schedule đang tắt trong
 bản xuất; bật lại khi kiểm thử theo hướng dẫn. Chạy `pull.ps1` để nạp DocType,
