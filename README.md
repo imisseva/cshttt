@@ -2,6 +2,18 @@
 
 Hệ thống quản lý giáo dục & trường học chạy trên nền tảng **ERPNext v16** và **Frappe Framework v16** thông qua Docker cho case study **Ling IELTS**.
 
+## Bổ sung ngày 15/11/2026
+
+- Hai DocType: **IELTS Placement Test** và **Instructor Availability**.
+- Mã Python kiểm tra giờ rảnh, phân công và trùng lịch khi lưu Course Schedule.
+- Client Script sửa bộ lọc Instructor trong Student Group và bản xuất ba Client Script.
+- [Hướng dẫn cài đặt và kiểm thử luồng xếp lịch](guides/luong_2/README.md).
+- [Khởi động môi trường Docker trên Windows](RUN-WINDOWS.md).
+
+Client Script lọc giáo viên theo giờ rảnh trên Course Schedule đang tắt trong
+bản xuất; bật lại khi kiểm thử theo hướng dẫn. Chạy `pull.ps1` để nạp DocType,
+sau đó làm các bước cài Python và nhập Client Script trong tài liệu luồng xếp lịch.
+
 ## 📦 Thành phần hệ thống
 
 - **Frappe Framework:** `version-16` (Python 3.14)
