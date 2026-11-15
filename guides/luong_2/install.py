@@ -41,7 +41,7 @@ if marker not in hooks_text and hook_path not in hooks_text:
 ast.parse(new_hooks)
 
 stamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
-backup = bench / "sites/school.localhost/private/backups" / f"scheduling_code_{stamp}"
+backup = bench / "sites/school.localhost/private/code_backups" / f"scheduling_code_{stamp}"
 backup.mkdir(parents=True, exist_ok=False)
 shutil.copy2(hooks, backup / "hooks.py")
 if module_destination.exists():

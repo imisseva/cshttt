@@ -68,7 +68,7 @@ hook `validate` của Course Schedule vào `education/hooks.py`, giữ các hand
 Chạy lại không nhân đôi hook.
 
 Thông báo cuối bước cài cho biết thư mục bản sao trong
-`sites/school.localhost/private/backups/scheduling_code_...`.
+`sites/school.localhost/private/code_backups/scheduling_code_...`.
 
 Cách đặt module trong Education phù hợp bố trí mã hiện tại của repo. Đây là một
 tệp bổ sung của dự án. Khi gửi cho thành viên khác, cần bàn giao cả module, hook

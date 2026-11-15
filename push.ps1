@@ -51,7 +51,16 @@ if (Test-Path $customSource) {
 
 Write-Host "[2/2] Dang day len GitHub..." -ForegroundColor Cyan
 git add custom_doctypes README.md push.ps1 pull.ps1
-git commit -m $message
+if ($LASTEXITCODE -ne 0) { throw "Khong stage duoc thay doi." }
+git diff --cached --quiet
+$stagedStatus = $LASTEXITCODE
+if ($stagedStatus -eq 1) {
+    git commit -m $message
+    if ($LASTEXITCODE -ne 0) { throw "Khong tao duoc commit." }
+} elseif ($stagedStatus -ne 0) {
+    throw "Khong kiem tra duoc thay doi da stage."
+}
 git push origin main
+if ($LASTEXITCODE -ne 0) { throw "Git push that bai." }
 
 Write-Host "HOAN TAT! Da day len GitHub thanh cong voi thong diep: '$message'" -ForegroundColor Green
