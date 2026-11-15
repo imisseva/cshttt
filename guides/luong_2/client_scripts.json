@@ -1,0 +1,26 @@
+[
+  {
+    "doctype": "Client Script",
+    "name": "Ling IELTS - Student Group Instructor Filter",
+    "dt": "Student Group",
+    "view": "Form",
+    "enabled": 1,
+    "script": "function ling_group_instructor_query(frm) {\n    frm.set_query(\"instructor\", \"instructors\", (doc, child_doctype, child_name) => {\n        const other_instructors = (doc.instructors || [])\n            .filter(row => row.name !== child_name && row.instructor)\n            .map(row => row.instructor);\n\n        return other_instructors.length\n            ? { filters: { name: [\"not in\", other_instructors] } }\n            : {};\n    });\n}\n\nfrappe.ui.form.on(\"Student Group\", {\n    setup: ling_group_instructor_query,\n    refresh: ling_group_instructor_query\n});\n\nfrappe.ui.form.on(\"Student Group Instructor\", {\n    instructors_add: ling_group_instructor_query\n});\n"
+  },
+  {
+    "doctype": "Client Script",
+    "name": "Lọc giáo viên theo giờ rảnh",
+    "dt": "Course Schedule",
+    "view": "Form",
+    "enabled": 0,
+    "script": "function ling_set_instructor_query(frm) {\n    frm.set_query(\"instructor\", () => ({\n        query: \"education.ling_scheduling.instructor_query\",\n        filters: {\n            student_group: frm.doc.student_group,\n            schedule_date: frm.doc.schedule_date,\n            from_time: frm.doc.from_time,\n            to_time: frm.doc.to_time,\n            current_schedule: frm.is_new() ? \"\" : frm.doc.name\n        }\n    }));\n}\n\nfrappe.ui.form.on(\"Course Schedule\", {\n    setup(frm) {\n        // The standard Education onload handler also reads this array.\n        frm.instructors = frm.instructors || [];\n    },\n    onload_post_render: ling_set_instructor_query,\n    refresh: ling_set_instructor_query,\n    student_group: ling_set_instructor_query,\n    schedule_date: ling_set_instructor_query,\n    from_time: ling_set_instructor_query,\n    to_time: ling_set_instructor_query\n});\n"
+  },
+  {
+    "doctype": "Client Script",
+    "name": "giờ rảnh",
+    "dt": "Instructor Availability",
+    "view": "Form",
+    "enabled": 1,
+    "script": "frappe.ui.form.on(\"Instructor Availability\", {\n    validate(frm) {\n        const start = frm.doc.from_time;\n        const end = frm.doc.to_time;\n\n        if (start && end && start >= end) {\n            frappe.throw(\"Giờ kết thúc phải sau giờ bắt đầu.\");\n        }\n    }\n});"
+  }
+]
