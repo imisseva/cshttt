@@ -8,12 +8,9 @@ if (-not (Test-Path "data_backup\database.sql.gz")) {
 
 Write-Host "[2/2] Dang phuc hoi toan bo Co so du lieu vao he thong Docker..." -ForegroundColor Cyan
 
-# 1. Chay restore database
-docker exec -w /workspace devcontainer-example-frappe-1 bash -c "
-cd /workspace/development/frappe-bench
-bench --site school.localhost restore /workspace/data_backup/database.sql.gz --mariadb-root-password 123 --admin-password admin
-bench --site school.localhost migrate
-"
+# 1. Copy file backup vao container va chay restore database
+docker cp data_backup\database.sql.gz devcontainer-example-frappe-1:/tmp/database.sql.gz
+docker exec -w /workspace/development/frappe-bench devcontainer-example-frappe-1 bash -c "bench --site school.localhost restore /tmp/database.sql.gz --mariadb-root-password 123 --admin-password admin --force && rm -f /tmp/database.sql.gz"
 
 # 2. Dong bo lai cac custom doctypes neu co
 powershell -ExecutionPolicy Bypass -File .\pull.ps1
