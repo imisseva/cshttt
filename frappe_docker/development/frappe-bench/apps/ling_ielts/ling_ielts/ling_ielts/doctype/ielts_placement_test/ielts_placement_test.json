@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-11-15 10:28:31.410410",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "candidate_name",
+  "student",
+  "test_date",
+  "listening",
+  "reading",
+  "writing",
+  "speaking",
+  "overall_band",
+  "suggested_program"
+ ],
+ "fields": [
+  {
+   "fieldname": "candidate_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Họ tên người dự thi",
+   "reqd": 1
+  },
+  {
+   "description": "Student có thể để trống khi chưa tạo hồ sơ",
+   "fieldname": "student",
+   "fieldtype": "Link",
+   "label": "Học viên",
+   "options": "Student"
+  },
+  {
+   "fieldname": "test_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Ngày kiểm tra",
+   "reqd": 1
+  },
+  {
+   "fieldname": "listening",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Listening",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reading",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Reading",
+   "reqd": 1
+  },
+  {
+   "fieldname": "writing",
+   "fieldtype": "Float",
+   "label": "Writing",
+   "reqd": 1
+  },
+  {
+   "fieldname": "speaking",
+   "fieldtype": "Float",
+   "label": "Speaking",
+   "reqd": 1
+  },
+  {
+   "fieldname": "overall_band",
+   "fieldtype": "Float",
+   "label": "Band tổng",
+   "reqd": 1
+  },
+  {
+   "description": "Program",
+   "fieldname": "suggested_program",
+   "fieldtype": "Link",
+   "label": "Cấp độ đề xuất",
+   "options": "Program"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-11-15 10:50:09.915853",
+ "modified_by": "Administrator",
+ "module": "Ling Ielts",
+ "name": "IELTS Placement Test",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Education Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

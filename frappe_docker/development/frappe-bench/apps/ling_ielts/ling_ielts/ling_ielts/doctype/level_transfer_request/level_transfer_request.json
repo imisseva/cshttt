@@ -1,0 +1,228 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-11-08 18:59:09.412354",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sec_student",
+  "student",
+  "student_name",
+  "current_program",
+  "current_student_group",
+  "col_break_1",
+  "new_program",
+  "new_student_group",
+  "proposed_by",
+  "transfer_reason",
+  "sec_fee",
+  "total_sessions",
+  "remaining_sessions",
+  "current_fee",
+  "col_break_2",
+  "new_fee",
+  "additional_fee",
+  "sec_status",
+  "status",
+  "rejection_reason",
+  "col_break_3",
+  "fees_doc",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "sec_student",
+   "fieldtype": "Section Break",
+   "label": "Thông tin Học viên & Lớp học"
+  },
+  {
+   "fieldname": "student",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Học viên",
+   "options": "Student",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "student.student_name",
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "label": "Họ và tên",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_program",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cấp độ hiện tại",
+   "options": "Program",
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_student_group",
+   "fieldtype": "Link",
+   "label": "Lớp hiện tại",
+   "options": "Student Group"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "new_program",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cấp độ mới đề xuất",
+   "options": "Program",
+   "reqd": 1
+  },
+  {
+   "fieldname": "new_student_group",
+   "fieldtype": "Link",
+   "label": "Lớp mới dự kiến",
+   "options": "Student Group"
+  },
+  {
+   "fieldname": "proposed_by",
+   "fieldtype": "Link",
+   "label": "Giáo viên đề xuất",
+   "options": "Instructor"
+  },
+  {
+   "fieldname": "transfer_reason",
+   "fieldtype": "Select",
+   "label": "Lý do chuyển cấp",
+   "options": "Vượt cấp qua bài kiểm tra tuần/tháng (BR-TR-01a)\nGiáo viên chủ động đề xuất giữa kỳ (BR-TR-01b)\nKhác"
+  },
+  {
+   "fieldname": "sec_fee",
+   "fieldtype": "Section Break",
+   "label": "Tính toán Phụ thu "
+  },
+  {
+   "default": "24",
+   "fieldname": "total_sessions",
+   "fieldtype": "Int",
+   "label": "Tổng số buổi khóa học",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remaining_sessions",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Số buổi còn lại",
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_fee",
+   "fieldtype": "Currency",
+   "label": "Học phí cấp cũ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "new_fee",
+   "fieldtype": "Currency",
+   "label": "Học phí cấp mới",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "additional_fee",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Số tiền phụ thu",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_status",
+   "fieldtype": "Section Break",
+   "label": "Trạng thái & Quyết định"
+  },
+  {
+   "default": "Chờ duyệt",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Trạng thái",
+   "options": "Chờ duyệt\nHọc viên đồng ý\nHọc viên từ chối\nĐã thanh toán phụ thu\nHoàn tất chuyển lớp"
+  },
+  {
+   "depends_on": "eval:doc.status=='Học viên từ chối'",
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "Lý do từ chối (nếu có)"
+  },
+  {
+   "fieldname": "col_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fees_doc",
+   "fieldtype": "Link",
+   "label": "Phiếu thu phụ thu",
+   "options": "Fees",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Level Transfer Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-08 19:10:15.943343",
+ "modified_by": "Administrator",
+ "module": "Ling Ielts",
+ "name": "Level Transfer Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Education Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Instructor",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

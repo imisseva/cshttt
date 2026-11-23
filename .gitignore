@@ -2,7 +2,9 @@
 frappe_docker/development/frappe-bench/env/
 frappe_docker/development/frappe-bench/node_modules/
 frappe_docker/development/frappe-bench/logs/
-frappe_docker/development/frappe-bench/apps/
+frappe_docker/development/frappe-bench/apps/*
+!frappe_docker/development/frappe-bench/apps/ling_ielts/
+*.egg-info/
 frappe_docker/development/frappe-bench/sites/*/locks/
 
 # Python

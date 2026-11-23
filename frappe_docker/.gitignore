@@ -10,6 +10,11 @@ development/*
 !development/apps-example.json
 !development/apps.json
 !development/vscode-example/
+!development/frappe-bench/
+development/frappe-bench/*
+!development/frappe-bench/apps/
+development/frappe-bench/apps/*
+!development/frappe-bench/apps/ling_ielts/
 
 # Pycharm
 .idea
