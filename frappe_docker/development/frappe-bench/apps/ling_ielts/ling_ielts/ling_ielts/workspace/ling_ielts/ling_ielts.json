@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"hdr1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Ling IELTS - Nghiệp vụ riêng</b></span>\",\"col\":12}},{\"id\":\"sc_pt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IELTS Placement Test\",\"col\":4}},{\"id\":\"sc_ia\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Instructor Availability\",\"col\":4}},{\"id\":\"sc_lt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Level Transfer Request\",\"col\":4}},{\"id\":\"hdr2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Education (Liên kết)</b></span>\",\"col\":12}},{\"id\":\"sc1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student\",\"col\":3}},{\"id\":\"sc2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Instructor\",\"col\":3}},{\"id\":\"sc3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Course Schedule\",\"col\":3}},{\"id\":\"sc4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student Group\",\"col\":3}},{\"id\":\"sc5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Program\",\"col\":3}},{\"id\":\"sc6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Room\",\"col\":3}}]",
+ "content": "[{\"id\":\"hdr1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Ling IELTS - Nghiệp vụ riêng</b></span>\",\"col\":12}},{\"id\":\"sc_pt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IELTS Placement Test\",\"col\":3}},{\"id\":\"sc_ia\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Instructor Availability\",\"col\":3}},{\"id\":\"sc_lt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Level Transfer Request\",\"col\":3}},{\"id\":\"sc_irr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Instructor Reschedule Request\",\"col\":3}},{\"id\":\"hdr2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Education (Liên kết)</b></span>\",\"col\":12}},{\"id\":\"sc1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student\",\"col\":3}},{\"id\":\"sc2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Instructor\",\"col\":3}},{\"id\":\"sc3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Course Schedule\",\"col\":3}},{\"id\":\"sc4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student Group\",\"col\":3}},{\"id\":\"sc5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Program\",\"col\":3}},{\"id\":\"sc6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Room\",\"col\":3}}]",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -11,7 +11,7 @@
  "is_hidden": 0,
  "label": "Ling IELTS",
  "links": [],
- "modified": "2026-11-23 01:46:30.000000",
+ "modified": "2026-11-24 16:30:00.000000",
  "modified_by": "Administrator",
  "module": "Ling Ielts",
  "name": "Ling IELTS",
@@ -43,6 +43,13 @@
    "doc_view": "List",
    "label": "Level Transfer Request",
    "link_to": "Level Transfer Request",
+   "type": "DocType"
+  },
+  {
+   "color": "Teal",
+   "doc_view": "List",
+   "label": "Instructor Reschedule Request",
+   "link_to": "Instructor Reschedule Request",
    "type": "DocType"
   },
   {

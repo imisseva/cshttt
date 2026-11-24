@@ -19,8 +19,8 @@ bench build --app ling_ielts
 bench --site school.localhost clear-cache
 '@
 
-$syncCmdUnix = $syncCmd -replace "`r`n", "`n"
-docker exec -i devcontainer-example-frappe-1 bash -lc $syncCmdUnix
+$syncCmdUnix = $syncCmd -replace "`r", ""
+$syncCmdUnix | docker exec -i devcontainer-example-frappe-1 sh -c "tr -d '\r' | bash -ls"
 if ($LASTEXITCODE -ne 0) { throw "Dong bo app ling_ielts trong Docker that bai." }
 
 Write-Host "Da dong bo app ling_ielts thanh cong! Ban hay vao trinh duyet kiem tra (Ctrl+Shift+R)." -ForegroundColor Green

@@ -36,6 +36,10 @@ function ling_set_room_query(frm) {
 frappe.ui.form.on("Course Schedule", {
     onload_post_render: ling_set_room_query,
     refresh: ling_set_room_query,
-    course: ling_set_room_query
+    course: ling_set_room_query,
+    custom_is_online(frm) {
+        if (frm.doc.custom_is_online) {
+            frm.set_value("room", "");
+        }
+    }
 });
-

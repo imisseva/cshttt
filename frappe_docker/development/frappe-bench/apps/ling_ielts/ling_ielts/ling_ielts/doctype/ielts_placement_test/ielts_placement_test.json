@@ -14,28 +14,29 @@
   "writing",
   "speaking",
   "overall_band",
-  "suggested_program"
+  "suggested_program",
+  "gi\u00e1o_vi\u00ean_ch\u1ea5m"
  ],
  "fields": [
   {
    "fieldname": "candidate_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Họ tên người dự thi",
+   "label": "H\u1ecd t\u00ean ng\u01b0\u1eddi d\u1ef1 thi",
    "reqd": 1
   },
   {
-   "description": "Student có thể để trống khi chưa tạo hồ sơ",
+   "description": "Student c\u00f3 th\u1ec3 \u0111\u1ec3 tr\u1ed1ng khi ch\u01b0a t\u1ea1o h\u1ed3 s\u01a1",
    "fieldname": "student",
    "fieldtype": "Link",
-   "label": "Học viên",
+   "label": "H\u1ecdc vi\u00ean",
    "options": "Student"
   },
   {
    "fieldname": "test_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Ngày kiểm tra",
+   "label": "Ng\u00e0y ki\u1ec3m tra",
    "reqd": 1
   },
   {
@@ -67,21 +68,27 @@
   {
    "fieldname": "overall_band",
    "fieldtype": "Float",
-   "label": "Band tổng",
+   "label": "Band t\u1ed5ng",
    "reqd": 1
   },
   {
    "description": "Program",
    "fieldname": "suggested_program",
    "fieldtype": "Link",
-   "label": "Cấp độ đề xuất",
+   "label": "C\u1ea5p \u0111\u1ed9 \u0111\u1ec1 xu\u1ea5t",
    "options": "Program"
+  },
+  {
+   "fieldname": "gi\u00e1o_vi\u00ean_ch\u1ea5m",
+   "fieldtype": "Link",
+   "label": "Gi\u00e1o vi\u00ean ch\u1ea5m",
+   "options": "Instructor"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-11-15 10:50:09.915853",
+ "modified": "2026-11-23 13:13:39.379997",
  "modified_by": "Administrator",
  "module": "Ling Ielts",
  "name": "IELTS Placement Test",
@@ -106,6 +113,17 @@
    "read": 1,
    "report": 1,
    "role": "Education Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Instructor",
    "share": 1,
    "write": 1
   }

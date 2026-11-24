@@ -169,8 +169,16 @@ doc_events = {
 			"ling_ielts.ling_room.validate_course_schedule_room",
 		]
 	},
+	"Fees": {
+		"validate": "ling_ielts.ling_fees.validate_fees_discount"
+	},
 	"Student Group": {
 		"validate": "ling_ielts.ling_fees.validate_student_group_fees"
+	},
+	"Student Leave Application": {
+		"before_insert": "ling_ielts.ling_leave.before_insert_student_leave",
+		"before_validate": "ling_ielts.ling_leave.validate_student_leave",
+		"before_submit": "ling_ielts.ling_leave.before_submit_student_leave",
 	},
 }
 

@@ -55,6 +55,9 @@ def room_query(doctype, txt, searchfield, start, page_len, filters):
 
 def validate_course_schedule_room(doc, method=None):
     """BR-ROOM-02: phòng được chọn phải đúng loại yêu cầu của buổi học."""
+    if cint(getattr(doc, "custom_is_online", 0)):
+        return
+
     if not doc.course or not doc.room:
         return
 

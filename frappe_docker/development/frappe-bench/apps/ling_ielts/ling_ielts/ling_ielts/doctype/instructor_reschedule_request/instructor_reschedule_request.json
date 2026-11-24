@@ -1,0 +1,243 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "IRR-.YYYY.-.#####",
+ "creation": "2026-11-23 13:30:33.824086",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ck5j",
+  "amended_from",
+  "instructor",
+  "course_schedule",
+  "student_group",
+  "program",
+  "schedule_date",
+  "from_time",
+  "to_time",
+  "requested_at",
+  "is_emergency",
+  "reason",
+  "status",
+  "resolution_type",
+  "new_schedule_date",
+  "new_from_time",
+  "new_to_time",
+  "replacement_instructor",
+  "new_room",
+  "makeup_course_schedule",
+  "approved_by",
+  "th\u1eddi_\u0111i\u1ec3m_duy\u1ec7t"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ck5j",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Instructor Reschedule Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "instructor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gi\u00e1o vi\u00ean",
+   "options": "Instructor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "course_schedule",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Bu\u1ed5i h\u1ecdc c\u1ea7n ngh\u1ec9",
+   "options": "Course Schedule",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "course_schedule.student_group",
+   "fieldname": "student_group",
+   "fieldtype": "Link",
+   "label": "L\u1edbp h\u1ecdc",
+   "options": "Student Group",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "course_schedule.program",
+   "fieldname": "program",
+   "fieldtype": "Link",
+   "label": "C\u1ea5p \u0111\u1ed9",
+   "options": "Program",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "course_schedule.schedule_date",
+   "fieldname": "schedule_date",
+   "fieldtype": "Date",
+   "label": "Ng\u00e0y h\u1ecdc c\u0169",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "course_schedule.from_time",
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "T\u1eeb gi\u1edd",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "course_schedule.to_time",
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "\u0110\u1ebfn gi\u1edd"
+  },
+  {
+   "default": "Now",
+   "fieldname": "requested_at",
+   "fieldtype": "Datetime",
+   "label": "Th\u1eddi \u0111i\u1ec3m g\u1eedi",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_emergency",
+   "fieldtype": "Check",
+   "label": "Ngh\u1ec9 \u0111\u1ed9t xu\u1ea5t",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "L\u00fd do xin ngh\u1ec9",
+   "reqd": 1
+  },
+  {
+   "default": "Ch\u1edd duy\u1ec7t",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Tr\u1ea1ng th\u00e1i duy\u1ec7t",
+   "options": "Ch\u1edd duy\u1ec7t\nCh\u1ea5p thu\u1eadn\nT\u1eeb ch\u1ed1i"
+  },
+  {
+   "depends_on": "eval:doc.status=='Ch\u1ea5p thu\u1eadn'",
+   "fieldname": "resolution_type",
+   "fieldtype": "Select",
+   "label": "Ph\u01b0\u01a1ng \u00e1n x\u1eed l\u00fd",
+   "options": "L\u00f9i l\u1ecbch\n\u0110\u1ed5i gi\u00e1o vi\u00ean\nD\u1ea1y b\u00f9\nD\u1ea1y b\u00f9 online"
+  },
+  {
+   "depends_on": "eval:doc.status=='Ch\u1ea5p thu\u1eadn' && ['L\u00f9i l\u1ecbch','D\u1ea1y b\u00f9','D\u1ea1y b\u00f9 online'].includes(doc.resolution_type)",
+   "fieldname": "new_schedule_date",
+   "fieldtype": "Date",
+   "label": "Ng\u00e0y m\u1edbi "
+  },
+  {
+   "depends_on": "eval:doc.status=='Ch\u1ea5p thu\u1eadn' && ['L\u00f9i l\u1ecbch','D\u1ea1y b\u00f9','D\u1ea1y b\u00f9 online'].includes(doc.resolution_type)",
+   "fieldname": "new_from_time",
+   "fieldtype": "Time",
+   "label": "T\u1eeb gi\u1edd m\u1edbi"
+  },
+  {
+   "depends_on": "eval:doc.status=='Ch\u1ea5p thu\u1eadn' && ['L\u00f9i l\u1ecbch','D\u1ea1y b\u00f9','D\u1ea1y b\u00f9 online'].includes(doc.resolution_type)",
+   "fieldname": "new_to_time",
+   "fieldtype": "Time",
+   "label": "\u0110\u1ebfn gi\u1edd m\u1edbi"
+  },
+  {
+   "depends_on": "eval:doc.status=='Ch\u1ea5p thu\u1eadn' && doc.resolution_type=='\u0110\u1ed5i gi\u00e1o vi\u00ean'",
+   "fieldname": "replacement_instructor",
+   "fieldtype": "Link",
+   "label": "Gi\u00e1o vi\u00ean d\u1ea1y thay",
+   "options": "Instructor"
+  },
+  {
+   "depends_on": "eval:doc.status=='Ch\u1ea5p thu\u1eadn' && ['L\u00f9i l\u1ecbch','D\u1ea1y b\u00f9','D\u1ea1y b\u00f9 online'].includes(doc.resolution_type)",
+   "fieldname": "new_room",
+   "fieldtype": "Link",
+   "label": "Ph\u00f2ng h\u1ecdc m\u1edbi",
+   "options": "Room"
+  },
+  {
+   "fieldname": "makeup_course_schedule",
+   "fieldtype": "Link",
+   "label": "Bu\u1ed5i d\u1ea1y b\u00f9 \u0111\u00e3 t\u1ea1o",
+   "options": "Course Schedule",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Ng\u01b0\u1eddi duy\u1ec7t",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "th\u1eddi_\u0111i\u1ec3m_duy\u1ec7t",
+   "fieldtype": "Datetime",
+   "label": "Th\u1eddi \u0111i\u1ec3m duy\u1ec7t",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-23 13:52:56.499006",
+ "modified_by": "Administrator",
+ "module": "Ling Ielts",
+ "name": "Instructor Reschedule Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Education Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Instructor",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

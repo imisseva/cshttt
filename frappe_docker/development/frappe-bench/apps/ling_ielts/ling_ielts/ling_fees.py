@@ -1,6 +1,8 @@
-"""Fee payment validation for the Ling IELTS enrollment flow.
+"""Fee payment and discount validation for the Ling IELTS enrollment flow.
 
 Luồng 4 - Quản lý học phí & thu tiền:
+  - validate_fees_discount: trừ custom_discount_amount, chặn giảm vượt học phí
+    (BR-FEE-04) và tự lưu custom_discount_applied_by.
   - validate_student_group_fees: chặn lưu Student Group khi có học viên chưa
     đóng đủ 100% học phí (BR-FEE-03).
   - check_group_fees: trả trạng thái học phí của danh sách học viên, dùng cho
@@ -8,6 +10,38 @@ Luồng 4 - Quản lý học phí & thu tiền:
 """
 import frappe
 from frappe import _
+from frappe.utils import flt, money_in_words
+
+
+def validate_fees_discount(doc, method=None):
+    """BR-FEE-02 / BR-FEE-04: Áp dụng giảm giá, chặn vượt tổng phí và lưu người áp dụng."""
+    base_total = sum(flt(row.amount) for row in (getattr(doc, "components", None) or []))
+    discount = flt(getattr(doc, "custom_discount_amount", 0))
+
+    if discount < 0:
+        frappe.throw(_("Mức giảm giá không được nhỏ hơn 0."))
+
+    if discount > base_total:
+        frappe.throw(
+            _("Mức giảm giá ({0}) không được lớn hơn tổng học phí ({1}) (BR-FEE-04).").format(
+                frappe.format_value(discount, {"fieldtype": "Currency"}),
+                frappe.format_value(base_total, {"fieldtype": "Currency"}),
+            )
+        )
+
+    precision = doc.precision("grand_total") if hasattr(doc, "precision") else 2
+    net_total = flt(base_total - discount, precision)
+    doc.grand_total = net_total
+    doc.outstanding_amount = net_total
+    doc.grand_total_in_words = money_in_words(net_total)
+
+    if discount > 0:
+        if not getattr(doc, "custom_discount_applied_by", None) or (
+            hasattr(doc, "has_value_changed") and doc.has_value_changed("custom_discount_amount")
+        ):
+            doc.custom_discount_applied_by = frappe.session.user
+    else:
+        doc.custom_discount_applied_by = None
 
 
 def student_has_full_payment(student, program=None):
@@ -26,6 +60,9 @@ def student_has_full_payment(student, program=None):
 
 def validate_student_group_fees(doc, method=None):
     """BR-FEE-03: học viên phải đóng đủ 100% học phí mới được xếp vào lớp."""
+    if getattr(getattr(doc, "flags", None), "skip_ling_fee_check", False):
+        return
+
     students = [row.student for row in doc.students if getattr(row, "student", None)]
     if not students:
         return
